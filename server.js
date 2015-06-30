@@ -54,10 +54,10 @@ app.get('/', function(req,res){
 // app.post('/addcourse', courseController.postAddCourse);
 // app.get('/viewcourses', courseController.getViewCourses);
 // app.post('/deletecourse/:id', courseController.postDeleteCourse);
-// app.get('/signup', userController.getSignUp);
-// app.post('/signup', userController.postSignUp);
-// app.post('/signin', userController.postSignIn);
-// app.get('/signout', userController.getSignOut);
+app.get('/signup', userController.getSignUp);
+app.post('/signup', userController.postSignUp);
+app.post('/signin', userController.postSignIn);
+app.get('/signout', userController.getSignOut);
 
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }), function(req, res) {
