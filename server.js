@@ -64,6 +64,12 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRe
   res.redirect(req.session.returnTo || '/');
 });
 
+app.get('/auth/google', passport.authenticate('google', { scope: ['email', 'profile'] }));
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), function(req, res) {
+  res.redirect(req.session.returnTo || '/');
+});
+
+
 // app.get('/dashboard',userController.getDashboard);
 
 //req=request =>HTTP REQUEST object

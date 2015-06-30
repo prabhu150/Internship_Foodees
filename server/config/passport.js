@@ -2,13 +2,22 @@ var User = require('../models/User');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
-var FacebookStrategy =require('passport-facebook').Strategy;
+var GoogleStrategy=require('passport-google-oauth').OAuth2Strategy;
+
 var facebook= {
   clientID: '386545951535931',
   clientSecret: '568efa38c458ffcc307c2bbf90e291c9',
   callbackURL: '/auth/facebook/callback',
   passReqToCallback: true
 };
+
+var google={
+clientID:'402415618005-j95vlsfedmo2tdv49e3kqb3b237igtb0.apps.googleusercontent.com',
+clientSecret:'_ct9aZ6_NPrk5AM8w7nfPQ6x',
+callbackURL:'https://localhost:8085/auth/google/callback',
+passReqToCallback:true
+};
+
 
 //When passport is created, this says what as to be stored with regards to the user
 passport.serializeUser(function(user, done) {
@@ -86,6 +95,55 @@ passport.use(new FacebookStrategy(facebook, function(req, accessToken, refreshTo
     });
   }
 }));
+
+/**
+ * Sign in with Google+.
+ */
+passport.use(new GoogleStrategy(google, function(req, accessToken, refreshToken, profile, done) {
+  if (req.user) {
+    User.findOne({ google: profile.id }, function(err, existingUser) {
+      if (existingUser) {
+        console.log('There is already a Google+ account that belongs to you. Sign in with that account or delete it, then link it with your current account.' );
+        done(err);
+      } else {
+        User.findById(req.user.id, function(err, user) {
+          user.google = profile.id;
+          user.tokens.push({ kind: 'google', accessToken: accessToken });
+          user.profile.displayName = user.profile.displayName || profile.displayName;
+          user.profile.gender = user.profile.gender || profile._json.gender;
+            //user.profile.picture = user.profile.picture || 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
+          user.save(function(err) {
+            console.log('Google account has been linked.');
+            done(err, user);
+          });
+        });
+      }
+    });
+  } else {
+    User.findOne({ google: profile.id }, function(err, existingUser) {
+      if (existingUser) return done(null, existingUser);
+      User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
+        if (existingEmailUser) {
+           console.log('There is already an account using this email address. Sign in to that account and link it with Google manually from Account Settings.' );
+          done(err);
+        } else {
+          var user = new User();
+          user.email = profile._json.email;
+          user.google = profile.id;
+          user.tokens.push({ kind: 'google', accessToken: accessToken });
+          user.profile.displayName = profile.displayName;
+          user.profile.gender = profile._json.gender;
+            //user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
+          user.profile.location = (profile._json.location) ? profile._json.location.name : '';
+          user.save(function(err) {
+            done(err, user);
+          });
+        }
+      });
+    });
+  }
+}));
+
 
 /**
  * Login Required middleware.
