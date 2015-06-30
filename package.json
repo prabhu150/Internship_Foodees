@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/CodeGurukul/Internship_Foodees#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.13.1",
     "connect-mongo": "^0.8.1",
     "express": "^4.13.0",

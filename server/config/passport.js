@@ -1,11 +1,11 @@
-//var User = require('../models/User');
+var User = require('../models/User');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var FacebookStrategy =require('passport-facebook').Strategy;
 var facebook= {
-  clientID: '1451905891797941',
-  clientSecret: 'e80d61826d93931591e1cd1476bd4e6d',
+  clientID: '386545951535931',
+  clientSecret: '568efa38c458ffcc307c2bbf90e291c9',
   callbackURL: '/auth/facebook/callback',
   passReqToCallback: true
 };

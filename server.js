@@ -7,12 +7,12 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
 //Require Models
-//var User = require('./server/models/User');
+var User = require('./server/models/User');
 var Course = require('./server/models/Course');
 var passportConf=require('./server/config/passport');
 
 //Require Controllers
-//var userController = require('./server/controllers/user');
+var userController = require('./server/controllers/user');
 //var courseController = require('./server/controllers/course');
 var homeController = require('./server/controllers/home');
 
@@ -25,7 +25,7 @@ app.set('view engine','jade');
 app.use(session({
   resave: true,
   saveUninitialized: true,
-  secret: 'Codegurukul',
+  secret: 'Cooking codes with Foodees',
   store: new MongoStore({ url: 'mongodb://localhost/foodees', autoReconnect: true })
 }));
 
@@ -61,7 +61,7 @@ app.get('/', function(req,res){
 
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }), function(req, res) {
-  res.redirect(req.session.returnTo || '/dashboard');
+  res.redirect(req.session.returnTo || '/');
 });
 
 // app.get('/dashboard',userController.getDashboard);

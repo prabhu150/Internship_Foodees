@@ -8,14 +8,10 @@ block main
               .form-group
                 input.form-control(type='email', placeholder='Email', name="email")
                 input.form-control(type='password', placeholder='Password', name="password")
-                button.btn.btn-default(type='submit', name="login") Login
-            form.form-inline(action="/signup" method="post")
-              .form-group
-                button.btn.btn-default(type='submit', name="signup") Signup
-            form(action="/auth/facebook" method="post")
-              .form-group
-                button.btn.btn-default(type='submit', name="submit") Login with Facebook
+                button.btn.btn-default(type='submit', name="signin") Signin
+                a.btn.btn-primary(href='/signup') Signup
+                a.btn.btn-primary(href='/auth/facebook') Login with Facebook
             form(action="/login" method="post")
               .form-group
-                button.btn.btn-default(type='submit', name="submit") Login with Google+
+                button.btn.btn-danger(type='submit', name="submit") Login with Google+
             

@@ -27,7 +27,7 @@ exports.postSignIn = function(req,res, next){
       req.logIn(user, function(err) {
         if (err) return next(err);
         console.log('Success! You are logged in.');
-        res.redirect(req.session.returnTo ||'/dashboard');
+        res.redirect(req.session.returnTo ||'/');
       });
     })(req, res, next);
 }
