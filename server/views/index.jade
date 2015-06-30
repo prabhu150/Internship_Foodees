@@ -1,0 +1,21 @@
+extends ./includes/layout
+block main
+  .container
+      .jumbotron
+        .row
+          .col-md-6.col-md-offset-3.text-center
+            form(action="/login" method="post")
+              .form-group
+                input.form-control(type='email', placeholder='Email', name="email")
+                input.form-control(type='password', placeholder='Password', name="password")
+                button.btn.btn-default(type='submit', name="login") Login
+            form.form-inline(action="/signup" method="post")
+              .form-group
+                button.btn.btn-default(type='submit', name="signup") Signup
+            form(action="/auth/facebook" method="post")
+              .form-group
+                button.btn.btn-default(type='submit', name="submit") Login with Facebook
+            form(action="/login" method="post")
+              .form-group
+                button.btn.btn-default(type='submit', name="submit") Login with Google+
+            
