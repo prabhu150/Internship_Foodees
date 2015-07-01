@@ -10,10 +10,30 @@ nav.navbar.navbar-inverse.navbar-fixed-top
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           if user
             ul.navbar-right
-              li
-                h3 #{user.profile.name} 
-              li
-                a(href='/signout') Sign Out
+              .btn-group
+                //button.btn.btn-danger(type='button') Action
+                .media
+                  .media-left
+                    a(href='#')
+                      img.media-object(src= user.profile.picture  , alt=' Profile Pic')
+
+                button.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  span.caret
+                  span.sr-only Toggle Dropdown
+                ul.dropdown-menu
+                  li
+                    p Signed In As #{user.profile.name}
+                  li
+                    a(href='#') See Profile
+                  li
+                    a(href='#') My Orders
+                  li.divider(role='separator')
+                  li
+                    a(href='/signout') Log-Out
+              //- li
+              //-   h3 #{user.profile.name} 
+              //- li
+              //-   a(href='/signout') Sign Out
           ul.nav.navbar-nav.navbar-left
             li
               a(href='/') About

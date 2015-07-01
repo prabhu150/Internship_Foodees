@@ -73,6 +73,17 @@ app.get('/auth/google/callback',
 res.redirect(req.session.returnTo || '/');
   });
 
+app.get('/auth/twitter',
+  passport.authenticate('twitter'));
+
+app.get('/auth/twitter/callback', 
+  passport.authenticate('twitter', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+
+
 
 app.listen(3000);
 console.log("Express server is listening at port 3000");
