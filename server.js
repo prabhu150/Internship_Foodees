@@ -64,10 +64,15 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRe
   res.redirect(req.session.returnTo || '/');
 });
 
-app.get('/auth/google', passport.authenticate('google', { scope: ['email', 'profile'] }));
-app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), function(req, res) {
-  res.redirect(req.session.returnTo || '/');
-});
- 
-app.listen(8085);
-console.log("Express server is listening at port 8085");
+app.get('/auth/google',
+  passport.authenticate('google',  { scope:  ['profile' , 'email' , 'https://www.googleapis.com/auth/plus.login']}));
+
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/' }),
+  function(req, res) {
+res.redirect(req.session.returnTo || '/');
+  });
+
+
+app.listen(3000);
+console.log("Express server is listening at port 3000");

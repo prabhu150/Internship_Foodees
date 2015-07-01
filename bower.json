@@ -3,7 +3,14 @@
   "version": "0.0.0",
   "homepage": "https://github.com/CodeGurukul/Internship_Foodees",
   "authors": [
-    "cherylcherry <cherylcherry95@gmail.com>"
+    "cherylcherry <cherylcherry95@gmail.com>",
+    "prabhu150<abhijeetprabhu15@gmail.com>"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "toastr": "~2.1.1"
+  }
+
 }
