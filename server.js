@@ -68,12 +68,6 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['email', 'prof
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), function(req, res) {
   res.redirect(req.session.returnTo || '/');
 });
-
-
-// app.get('/dashboard',userController.getDashboard);
-
-//req=request =>HTTP REQUEST object
-//res=response =>HTTP RESPONSE object
  
 app.listen(8085);
 console.log("Express server is listening at port 8085");
