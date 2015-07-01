@@ -5,8 +5,8 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 var GoogleStrategy=require('passport-google-oauth').OAuth2Strategy;
 
 var facebook={
-clientID:'376644559201250',
-clientSecret:'2b03049987f434a410c1df296ae2e3e6',
+clientID:'386545951535931',
+clientSecret:'568efa38c458ffcc307c2bbf90e291c9',
 callbackURL:'/auth/facebook/callback',
 passReqToCallback:true
 };

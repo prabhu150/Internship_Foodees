@@ -11,12 +11,27 @@ nav.navbar.navbar-inverse.navbar-fixed-top
           if user
             ul.navbar-right
               li
-                h3 #{user.profile.name} 
+                h3 Hi, #{user.profile.name} 
+                a(href='/signout') Log-Out
               li
-                a(href='/signout') Sign Out
+                 button.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  span.caret
+                  span.sr-only Toggle Dropdown
+                ul.dropdown-menu
+                  li
+                    p Signed In As #{user.profile.name}
+                  li
+                    a(href='#') See Profile
+                  li
+                    a(href='#') My Orders
+                  li.divider(role='separator')
+                  li
+                    a(href='/signout') Log-Out
+
+
           ul.nav.navbar-nav.navbar-left
             li
-              a(href='/') About
+              a(href='/about') About
             li
               a(href='/working') How we work
             if(user)
@@ -24,4 +39,7 @@ nav.navbar.navbar-inverse.navbar-fixed-top
                 li
                   a(href='/editmenu') Edit menu
             li
-              a(href='/viewcourses') Menu
+              a(href='/menu') Menu
+            if(user)
+              li
+                a(href='/ordernow') Order now
