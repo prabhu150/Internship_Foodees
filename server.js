@@ -50,7 +50,7 @@ app.get('/', userController.getIndex);
 app.get('/about', userController.getAbout);
 app.get('/working', userController.getWorking);
 app.get('/editmenu', menuController.getEditMenu);
-//app.post('/editmenu', menuController.postEditMenu);//complete?
+app.post('/editmenu', menuController.postEditMenu);
 app.get('/menu', menuController.getMenu);
 app.get('/ordernow', orderController.getOrderNow);
 app.post('/ordernow', orderController.postOrderNow);

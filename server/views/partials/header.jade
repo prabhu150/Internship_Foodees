@@ -9,24 +9,25 @@ nav.navbar.navbar-inverse.navbar-fixed-top
           a.navbar-brand(href='/') Foodees
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           if user
-            ul.navbar-right
+            ul.nav.navbar-nav.navbar-right
               li
-                h3 Hi, #{user.profile.name} 
-                a(href='/signout') Log-Out
+                h3 Hi, #{user.profile.name}
+              li 
+                a.btn.btn-default(href='/signout') Log-Out
               li
                  button.btn.btn-primary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
                   span.caret
                   span.sr-only Toggle Dropdown
-                ul.dropdown-menu
-                  li
-                    p Signed In As #{user.profile.name}
-                  li
-                    a(href='#') See Profile
-                  li
-                    a(href='#') My Orders
-                  li.divider(role='separator')
-                  li
-                    a(href='/signout') Log-Out
+                    ul.dropdown-menu
+                      li
+                        p Signed In As #{user.profile.name}
+                      li
+                        a(href='#') See Profile
+                      li
+                        a(href='#') My Orders
+                      li.divider(role='separator')
+                      li
+                        a(href='/signout') Log-Out
 
 
           ul.nav.navbar-nav.navbar-left

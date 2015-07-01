@@ -3,8 +3,10 @@ var mongoose= require('mongoose');
 //A mongoose Schema
 var menuSchema = new mongoose.Schema({
     name: String,
-    featured: Boolean,
-    published: Date
+    description: String,
+    price: String,
+    type: String,
+    category: String
 });
 
 // Compile Schema into a mongoose Model
