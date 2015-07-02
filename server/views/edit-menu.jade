@@ -1,0 +1,24 @@
+extends ./includes/layout
+block main
+	.container
+		.row
+			.col-md-4.col-md-offset-4
+				form(action='/editmenu' method='post')
+					input.form-control(type='text' placeholder='Item Name' name="itemName")
+					input.form-control(type='typearea' placeholder='Description' name="description")
+					.input-group
+						.input-group-addon ₹
+						input.form-control(type='number' name="price")
+					|Type
+					select.form-control(name='type')
+						option Rice
+						option Gravy
+						option Rotis
+						option Extra
+						option Juices
+						option Desserts
+					|Category
+					select.form-control(name='category')
+						option Veg.
+						option Non-veg.
+					button.btn.btn-default(type='submit') Add to Menu

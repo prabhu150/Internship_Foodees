@@ -8,13 +8,14 @@ var MongoStore = require('connect-mongo')(session);
 
 //Require Models
 var User = require('./server/models/User');
-var Course = require('./server/models/Course');
+var Menu = require('./server/models/Menu');
+var Order = require('./server/models/Order');
 var passportConf=require('./server/config/passport');
 
 //Require Controllers
 var userController = require('./server/controllers/user');
-//var courseController = require('./server/controllers/course');
-var homeController = require('./server/controllers/home');
+var menuController = require('./server/controllers/menu');
+var orderController = require('./server/controllers/order');
 
 var app =express();
 
@@ -45,15 +46,14 @@ mongoose.connect('mongodb://localhost/foodees');
 console.log('local mongodb opened');
 
 //Routes
-app.get('/', function(req,res){
-        Course.find(function(err,courses){
-            res.render('index', {title:'Home'});
-        });
-});
-// app.get('/addcourse', courseController.getAddCourse);
-// app.post('/addcourse', courseController.postAddCourse);
-// app.get('/viewcourses', courseController.getViewCourses);
-// app.post('/deletecourse/:id', courseController.postDeleteCourse);
+app.get('/', userController.getIndex);
+app.get('/about', userController.getAbout);
+app.get('/working', userController.getWorking);
+app.get('/editmenu', menuController.getEditMenu);
+app.post('/editmenu', menuController.postEditMenu);
+app.get('/menu', menuController.getMenu);
+app.get('/ordernow', orderController.getOrderNow);
+app.post('/ordernow', orderController.postOrderNow);
 app.get('/signup', userController.getSignUp);
 app.post('/signup', userController.postSignUp);
 app.post('/signin', userController.postSignIn);
@@ -64,26 +64,34 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRe
   res.redirect(req.session.returnTo || '/');
 });
 
-app.get('/auth/google',
-  passport.authenticate('google',  { scope:  ['profile' , 'email' , 'https://www.googleapis.com/auth/plus.login']}));
+// <<<<<<< HEAD
+// app.get('/auth/google',
+//   passport.authenticate('google',  { scope:  ['profile' , 'email' , 'https://www.googleapis.com/auth/plus.login']}));
 
-app.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/' }),
-  function(req, res) {
+// app.get('/auth/google/callback', 
+//   passport.authenticate('google', { failureRedirect: '/' }),
+//   function(req, res) {
+// res.redirect(req.session.returnTo || '/');
+//   });
+
+// app.get('/auth/twitter',
+//   passport.authenticate('twitter'));
+
+// app.get('/auth/twitter/callback', 
+//   passport.authenticate('twitter', { failureRedirect: '/login' }),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect('/');
+//   });
+
+
+
+// =======
+app.get('/auth/google', passport.authenticate('google',  { scope:  ['profile' , 'email' , 'https://www.googleapis.com/auth/plus.login']}));
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), function(req, res) {
 res.redirect(req.session.returnTo || '/');
   });
 
-app.get('/auth/twitter',
-  passport.authenticate('twitter'));
-
-app.get('/auth/twitter/callback', 
-  passport.authenticate('twitter', { failureRedirect: '/login' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
-  });
-
-
-
+// >>>>>>> 745ef1410231d45f97b1d55d24d72dc82b496f6d
 app.listen(3000);
 console.log("Express server is listening at port 3000");
