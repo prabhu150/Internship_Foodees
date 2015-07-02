@@ -7,21 +7,17 @@ block main
 					input.form-control(type='text' placeholder='Name' name="name")
 					input.form-control(type='email' placeholder='Email' name="email")
 					input.form-control(type='password' placeholder='Password' name="password")
-					input.form-control(type='password' placeholder='Confirm Password' name="password")
+					input.form-control(type='password' placeholder='Confirm Password' name="password1")
 					input(type='radio', name='sex', value='male')
 					| Male
 					input(type='radio', name='sex', value='female')
 					| Female
 					br
-					input(type='radio', name='prefer', value='Vegetarian')
-					| Vegetarian
-					input(type='radio', name='prefer', value='Non-Vegetarian')
-					| Non-Vegetarian
-					br
-					input(type='checkbox', name='vehicle', value='Bike')
+					input(type='checkbox', name='agree')
 					| I agree to the 
 					a(href='#') terms and conditions.
 					br
 					button.btn.btn-default(type='submit') Signup
+
 script(type="text/javascript", src="formvalidate.js");	
 					
