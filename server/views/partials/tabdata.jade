@@ -1,20 +1,144 @@
 .tab-content
 	#rice.tab-pane.active(role='tabpanel')
 		.container
-			.row
-				.col-md-6.text-center
+			.row.text-center
 					each val in menus
-						.row
-							.col-md-6.jumbotron
-								p= val.name
-								p= val.featured
-								p= val.published
-								form(action="/deleteitem/"+val._id method="post")
-									button.btn.btn-default(type='submit') Delete        
+						if(val.type=="Rice")
+							if(val.category=="Veg.")
+								.col-md-3.jumbotron.veg-block
+									p= val.name
+									p= val.description
+									p= '₹'+val.price
+									if (user)
+										if (user.type=="admin")
+												form(action="/deleteitem/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Delete 
+							else  
+								.col-md-3.jumbotron.non-veg-block
+									p= val.name
+									p= val.description
+									p= '₹'+val.price
+									if (user)
+										if (user.type=="admin")
+											form(action="/deleteitem/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Delete      
 
-	#gravy.tab-pane(role='tabpanel') DAL
-	#roti.tab-pane(role='tabpanel') Roti
-	#extra.tab-pane(role='tabpanel') extra
-	#juices.tab-pane(role='tabpanel') juice
-	#desserts.tab-pane(role='tabpanel') ...
+	#gravy.tab-pane(role='tabpanel')
+		.container
+			.row.text-center
+					each val in menus
+						if(val.type=="Gravy")
+							if(val.category=="Veg.")
+								.col-md-3.jumbotron.veg-block
+									p= val.name
+									p= val.description
+									p= '₹'+val.price
+									if (user)
+										if (user.type=="admin")
+											form(action="/deleteitem/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Delete 
+							else  
+								.col-md-3.jumbotron.non-veg-block
+									p= val.name
+									p= val.description
+									p= '₹'+val.price
+									if (user)
+										if (user.type=="admin")
+											form(action="/deleteitem/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Delete 
 
+	#roti.tab-pane(role='tabpanel')
+		.container
+			.row.text-center
+					each val in menus
+						if(val.type=="Rotis")
+							if(val.category=="Veg.")
+								.col-md-3.jumbotron.veg-block
+									p= val.name
+									p= val.description
+									p= '₹'+val.price
+									if (user)
+										if (user.type=="admin")
+											form(action="/deleteitem/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Delete 
+							else  
+								.col-md-3.jumbotron.non-veg-block
+									p= val.name
+									p= val.description
+									p= '₹'+val.price
+									if (user)
+										if (user.type=="admin")
+											form(action="/deleteitem/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Delete   
+
+	#extra.tab-pane(role='tabpanel')
+		.container
+			.row.text-center
+					each val in menus
+						if(val.type=="Extra")
+							if(val.category=="Veg.")
+								.col-md-3.jumbotron.veg-block
+									p= val.name
+									p= val.description
+									p= '₹'+val.price
+									if (user)
+										if (user.type=="admin")
+											form(action="/deleteitem/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Delete 
+							else  
+								.col-md-3.jumbotron.non-veg-block
+									p= val.name
+									p= val.description
+									p= '₹'+val.price
+									if (user)
+										if (user.type=="admin")
+											form(action="/deleteitem/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Delete 
+
+	#juices.tab-pane(role='tabpanel')
+		.container
+			.row.text-center
+					each val in menus
+						if(val.type=="Juices")
+							if(val.category=="Veg.")
+								.col-md-3.jumbotron.veg-block
+									p= val.name
+									p= val.description
+									p= '₹'+val.price
+									if (user)
+										if (user.type=="admin")
+											form(action="/deleteitem/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Delete 
+							else  
+								.col-md-3.jumbotron.non-veg-block
+									p= val.name
+									p= val.description
+									p= '₹'+val.price
+									if (user)
+										if (user.type=="admin")
+											form(action="/deleteitem/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Delete 
+
+	#desserts.tab-pane(role='tabpanel')
+		.container
+			.row.text-center
+					each val in menus
+						if(val.type=="Desserts")
+							if(val.category=="Veg.")
+								.col-md-3.jumbotron.veg-block
+									p= val.name
+									p= val.description
+									p= '₹'+val.price
+									if (user)
+										if (user.type=="admin")
+											form(action="/deleteitem/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Delete 
+							else  
+								.col-md-3.jumbotron.non-veg-block
+									p= val.name
+									p= val.description
+									p= '₹'+val.price
+									if (user)
+										if (user.type=="admin")
+											form(action="/deleteitem/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Delete 
