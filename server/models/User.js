@@ -8,7 +8,6 @@ var userSchema = new mongoose.Schema({
   facebook: String,
   google: String,
   twitter: String,
-  
   tokens: Array,
   type:{type:String,default:'customer'},
 
@@ -17,8 +16,6 @@ var userSchema = new mongoose.Schema({
     gender: { type: String, default: '' },
     location: { type: String, default: '' },
     picture: { type: String, default: 'http://transmedia.trinity.edu/~amille10/minisite3/facebookpicture.jpg' },
-    preference:{type:String , default:'Vegetarian'},
-    balance:Number ,
 },
 
   resetPasswordToken: String,
