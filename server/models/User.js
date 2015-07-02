@@ -10,7 +10,7 @@ var userSchema = new mongoose.Schema({
   twitter: String,
   
   tokens: Array,
-  type:String,
+  type:{type:String,default:'customer'},
 
   profile: {
     name: { type: String, default: '' },

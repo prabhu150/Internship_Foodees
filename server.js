@@ -48,12 +48,14 @@ console.log('local mongodb opened');
 //Routes
 app.get('/', userController.getIndex);
 app.get('/about', userController.getAbout);
-app.get('/working', userController.getWorking);
-app.get('/editmenu', menuController.getEditMenu);
-app.post('/editmenu', menuController.postEditMenu);
 app.get('/menu', menuController.getMenu);
 app.get('/ordernow', orderController.getOrderNow);
 app.post('/ordernow', orderController.postOrderNow);
+
+// app.get('/customer', userController.getCustomer);
+//  app.get('/addadmin', userController.addAdmin);
+//  app.get('/deletecustomer/:id', userController.DeleteCustomer);
+
 app.get('/signup', userController.getSignUp);
 app.post('/signup', userController.postSignUp);
 app.post('/signin', userController.postSignIn);
@@ -64,34 +66,11 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRe
   res.redirect(req.session.returnTo || '/');
 });
 
-// <<<<<<< HEAD
-// app.get('/auth/google',
-//   passport.authenticate('google',  { scope:  ['profile' , 'email' , 'https://www.googleapis.com/auth/plus.login']}));
-
-// app.get('/auth/google/callback', 
-//   passport.authenticate('google', { failureRedirect: '/' }),
-//   function(req, res) {
-// res.redirect(req.session.returnTo || '/');
-//   });
-
-// app.get('/auth/twitter',
-//   passport.authenticate('twitter'));
-
-// app.get('/auth/twitter/callback', 
-//   passport.authenticate('twitter', { failureRedirect: '/login' }),
-//   function(req, res) {
-//     // Successful authentication, redirect home.
-//     res.redirect('/');
-//   });
-
-
-
-// =======
 app.get('/auth/google', passport.authenticate('google',  { scope:  ['profile' , 'email' , 'https://www.googleapis.com/auth/plus.login']}));
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), function(req, res) {
 res.redirect(req.session.returnTo || '/');
   });
 
-// >>>>>>> 745ef1410231d45f97b1d55d24d72dc82b496f6d
+
 app.listen(3000);
 console.log("Express server is listening at port 3000");

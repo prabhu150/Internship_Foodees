@@ -9,14 +9,12 @@ block main
             input.form-control(type='email', placeholder='Email', name="email")
             input.form-control(type='password', placeholder='Password', name="password")
             button.btn.btn-default(type='submit', name="signin") Signin
-            &nbsp &nbsp &nbsp
+            |&nbsp &nbsp &nbsp
             a.btn.btn-default(href='/signup') Signup
-
             .option
               span
               |&nbsp OR &nbsp
               span
-
             a.col-md-6.col-md-offset-3.btn.btn-primary(href='/auth/facebook') 
               .login-icon
                 i.fa.fa-facebook 
@@ -31,8 +29,10 @@ block main
               .login-icon
                 i.fa.fa-twitter 
                 |&nbspLogin with Twitter
-
-
     include ../views/partials/footer
+
+
+
+
 
 

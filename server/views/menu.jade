@@ -1,17 +1,34 @@
 extends ./includes/layout
 block main
 	h1 menu
+	//- ul.nav.nav-tabs
+	//- 	li.active(role="presentation")
+	//- 		a(href="index") Rice
+	//- 	li(role="presentation")
+	//- 		a(href="#gravy") Gravy
+	//- 	li(role="presentation")
+	//- 		a(href="#roti") Roti
+	//- 	li(role="presentation")
+	//- 		a(href="#extra") Extra
+	//- 	li(role="presentation")
+	//- 		a(href="#juices") Juices
+	//- 	li(role="presentation")
+	//- 		a(href="#desserts") Desserts
+	ul.nav.nav-tabs(role='tablist')
+		li.active(role='presentation')
+			a(href='#rice', aria-controls='rice', role='tab', data-toggle='tab') Rice
+		li(role='presentation')
+			a(href='#gravy', aria-controls='gravy', role='tab', data-toggle='tab') Gravy
+		li(role='presentation')
+			a(href='#roti', aria-controls='roti', role='tab', data-toggle='tab') Roti
+		li(role='presentation')
+			a(href='#extra', aria-controls='extra', role='tab', data-toggle='tab') Extra
+		li(role='presentation')
+			a(href='#juices', aria-controls='juices', role='tab', data-toggle='tab') Juices
+		li(role='presentation')
+			a(href='#desserts', aria-controls='desserts', role='tab', data-toggle='tab') Desserts
+	include ../views/partials/tabdata
+	
 
-	ul.nav.nav-tabs
-		li.active(role="presentation")
-			a(href="#rice") Rice
-		li(role="presentation")
-			a(href="#gravy") Gravy
-		li(role="presentation")
-			a(href="#roti") Roti
-		li(role="presentation")
-			a(href="#extra") Extra
-		li(role="presentation")
-			a(href="#juices") Juices
-		li(role="presentation")
-			a(href="#desserts") Desserts
+		
+

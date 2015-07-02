@@ -19,17 +19,18 @@ exports.getSignUp = function(req,res){
 }
 
 exports.postSignUp = function(req,res){
-        var user = new User({profile:{name:req.body.name,gender:req.body.sex.value,preference:req.body.prefer.value}, email:req.body.email, password:req.body.password})
+        var user = new User({profile:{name:req.body.name}, email:req.body.email, password:req.body.password})
         user.save();
-        Course.find(function(err,courses){
+        
           res.render('index',{title:'Home'});
-        });
+        
 }
 
 exports.postSignIn = function(req,res, next){
     passport.authenticate('local',function(err, user, info) {
       if (err) return next(err);
       if (!user) {
+        console.log(user);
         console.log('errors');
         return res.redirect('/');
       }
@@ -50,3 +51,29 @@ exports.getDashboard = function(req,res){
     res.render('dashboard',{title:'Dashboard'});
 }
 
+
+// exports.getCustomer =function(req,res)
+// {
+// User.find(function(err){
+//             res.render('customer');
+//         });
+// }
+
+// exports.addAdmin =function(req,res)
+// {
+// User.find({ _id:req.params.id }, function (err) {
+//   User.type="admin";
+//             User.find(function(err){
+//             res.render('customer');
+//         });
+//     });
+// }
+
+
+// exports.postDeleteCustomer = function(req,res){
+//         User.remove({ _id:req.params.id }, function (err) {
+//             User.find(function(err){
+//             res.render('customer');
+//         });
+//     });
+// }

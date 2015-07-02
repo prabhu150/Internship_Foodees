@@ -33,12 +33,13 @@ nav.navbar.navbar-inverse.navbar-fixed-top
               a(href='/about') About
             li
               a(href='/working') How we work
-            if(user)
-              if(user.type =="admin")
-                li
-                  a(href='/editmenu') Edit menu
             li
               a(href='/menu') Menu
+            if(user)
+              if ( user.type =="admin")
+                li
+                  a(href='/customer') View Users
+                  //- a(href='/editmenu') Edit menu
 
               
 
