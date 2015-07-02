@@ -51,11 +51,9 @@ app.get('/about', userController.getAbout);
 app.get('/menu', menuController.getMenu);
 app.get('/ordernow', orderController.getOrderNow);
 app.post('/ordernow', orderController.postOrderNow);
-
-// app.get('/customer', userController.getCustomer);
-//  app.get('/addadmin', userController.addAdmin);
-//  app.get('/deletecustomer/:id', userController.DeleteCustomer);
-
+app.get('/working', userController.getWorking);
+app.get('/editmenu', menuController.getEditMenu);
+app.post('/editmenu', menuController.postEditMenu);
 app.get('/signup', userController.getSignUp);
 app.post('/signup', userController.postSignUp);
 app.post('/signin', userController.postSignIn);

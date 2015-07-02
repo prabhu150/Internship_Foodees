@@ -14,7 +14,7 @@ exports.postEditMenu = function(req,res){
         var menu = new Menu ({name: req.body.itemName, description: req.body.description, price: req.body.price, type: req.body.type, category: req.body.category});
         menu.save(function(err){
                 Menu.find(function(err,menues){
-                    res.render('Menu',{title: 'Menu'});
+                    res.render('menu',{title: 'Menu'});
                 });
         });
 }

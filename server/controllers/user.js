@@ -51,25 +51,6 @@ exports.getDashboard = function(req,res){
     res.render('dashboard',{title:'Dashboard'});
 }
 
-
-// exports.getCustomer =function(req,res)
-// {
-// User.find(function(err){
-//             res.render('customer');
-//         });
-// }
-
-// exports.addAdmin =function(req,res)
-// {
-// User.find({ _id:req.params.id }, function (err) {
-//   User.type="admin";
-//             User.find(function(err){
-//             res.render('customer');
-//         });
-//     });
-// }
-
-
 // exports.postDeleteCustomer = function(req,res){
 //         User.remove({ _id:req.params.id }, function (err) {
 //             User.find(function(err){

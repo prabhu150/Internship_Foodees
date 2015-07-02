@@ -1,5 +1,17 @@
 .tab-content
-	#rice.tab-pane.active(role='tabpanel') RICE
+	#rice.tab-pane.active(role='tabpanel')
+		//- .container
+		//- 	.row
+		//- 		.col-md-6.text-center
+		//- 			each val in menu
+		//- 				.row
+		//- 					.col-md-6.col-md-offset-4.jumbotron
+		//- 						p= val.name
+		//- 						p= val.featured
+		//- 						p= val.published
+		//- 						form(action="/deleteitem/"+val._id method="post")
+		//- 						button.btn.btn-default(type='submit') Delete        
+
 	#gravy.tab-pane(role='tabpanel') DAL
 	#roti.tab-pane(role='tabpanel') Roti
 	#extra.tab-pane(role='tabpanel') extra
