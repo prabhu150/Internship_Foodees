@@ -23,7 +23,7 @@ exports.postSignUp = function(req,res){
         user.save();
         User.find(function(err, users){
           res.render('index',{title:'Home'});
-        
+        });
 }
 
 exports.postSignIn = function(req,res, next){
