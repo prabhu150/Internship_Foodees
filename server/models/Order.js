@@ -6,6 +6,7 @@ var orderSchema = new mongoose.Schema({
     {
       dateoforder:String,
       dateofdelivery:String,
+      
       bill:Number
     }
 });
