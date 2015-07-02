@@ -54,6 +54,7 @@ app.post('/ordernow', orderController.postOrderNow);
 app.get('/working', userController.getWorking);
 app.get('/editmenu', menuController.getEditMenu);
 app.post('/editmenu', menuController.postEditMenu);
+app.post('/deleteitem/:id', menuController.postDeleteItem);
 app.get('/signup', userController.getSignUp);
 app.post('/signup', userController.postSignUp);
 app.post('/signin', userController.postSignIn);
