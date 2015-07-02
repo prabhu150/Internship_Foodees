@@ -1,0 +1,22 @@
+#signup{
+	background-color: rgba(183, 159, 208, .5);
+	margin-top: 50px;
+
+	.option{
+		font-family: fantasy;
+		font-size: 15px;
+		margin: 10px 0px 10px 0px;
+	}
+
+	.form-group, input, button, a{
+		margin-top: 5px;
+	}
+
+	span{
+		background: black;
+		height: 1.5px;
+		width: 30%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}

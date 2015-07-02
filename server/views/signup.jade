@@ -1,8 +1,8 @@
 extends ./includes/layout
 block main
-	.container
+	.container-fluid.signup-bg
 		.row
-			.col-md-6.col-md-offset-4
+			.col-md-4.col-md-offset-4#signup
 				form(action='/signup' method='post')
 					input.form-control(type='text' placeholder='Name' name="name")
 					input.form-control(type='email' placeholder='Email' name="email")
@@ -15,7 +15,8 @@ block main
 					br
 					input(type='checkbox', name='agree')
 					| I agree to the 
-					a(href='#') terms and conditions.
+					button.btn.btn-default(type='button', data-container='body', data-toggle='popover', title="O_O", data-placement='right', data-content='Terms and Conditions.')
+						|Terms and Conditions.
 					br
 					button.btn.btn-default(type='submit') Signup
 
