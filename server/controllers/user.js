@@ -19,10 +19,10 @@ exports.getSignUp = function(req,res){
 }
 
 exports.postSignUp = function(req,res){
-        var user = new User({profile:{name:req.body.name}, email:req.body.email, password:req.body.password})
+        var user = new User({profile:{name:req.body.name,gender:req.body.sex.value,preference:req.body.prefer.value}, email:req.body.email, password:req.body.password})
         user.save();
         Course.find(function(err,courses){
-          res.render('index',{title:'Home', courseList:courses});
+          res.render('index',{title:'Home'});
         });
 }
 

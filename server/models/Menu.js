@@ -2,10 +2,18 @@ var mongoose= require('mongoose');
 
 //A mongoose Schema
 var menuSchema = new mongoose.Schema({
-    name: String,
+    course:
+    {
+name:{type:String , default:'' ,unique:true},
+item:
+{
+	name:{type:String,unique:true},
+	capacity:Number,
+	itemtype:String,
+	itemprice:Number
+}},
     description: String,
     price: String,
-    type: String,
     category: String
 });
 

@@ -2,9 +2,12 @@ var mongoose= require('mongoose');
 
 //A mongoose Schema
 var orderSchema = new mongoose.Schema({
-    name: String,
-    featured: Boolean,
-    published: Date
+    orders:
+    {
+      dateoforder:String,
+      dateofdelivery:String,
+      bill:Number
+    }
 });
 
 // Compile Schema into a mongoose Model

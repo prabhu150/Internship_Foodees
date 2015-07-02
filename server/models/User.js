@@ -16,9 +16,10 @@ var userSchema = new mongoose.Schema({
     name: { type: String, default: '' },
     gender: { type: String, default: '' },
     location: { type: String, default: '' },
-    website: { type: String, default: '' },
-    picture: { type: String, default: '' }
-  },
+    picture: { type: String, default: 'http://transmedia.trinity.edu/~amille10/minisite3/facebookpicture.jpg' },
+    preference:{type:String , default:'Vegetarian'},
+    balance:Number ,
+},
 
   resetPasswordToken: String,
   resetPasswordExpires: Date

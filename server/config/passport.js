@@ -33,7 +33,7 @@ callbackURL:'/auth/google/callback',
 // =======
 // >>>>>>> 745ef1410231d45f97b1d55d24d72dc82b496f6d
 
-};
+
 
 
 
