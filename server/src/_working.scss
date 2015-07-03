@@ -1,7 +1,6 @@
 .working
 {
-	background:url(images/cover4.jpg);
-	background-size: cover;
+	
 }
 
 .fonti
@@ -14,10 +13,25 @@
   text-transform: uppercase;	
  }
 
+ .step-no 
+ {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #39b54a;
+  left: 50%;
+  font-size: 16px;
+  padding: auto;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 40px;
+  z-index: 100
+ }
 
 
 .thumbnail
 {
+background-color: rgba(183, 159, 208, 0.5);
 .pi
 {
 	font-style: italic;
@@ -31,8 +45,6 @@
 	text-shadow: 0.5px 0.5px orangered;
 	font-size: 15px;
 }
-
-background-color: rgba(46, 85, 87, .6);
 padding-top:60px;
 .t1
 {content: url(images/thumb1.jpg);}
@@ -53,5 +65,8 @@ padding-top:60px;
 .t4
 {		content: url(images/thumb4.jpg);}
 
-
+.p
+{
+	margin:1em;
+}
 }
