@@ -20,7 +20,7 @@ var userSchema = new mongoose.Schema({
 
 uorder:
 {
-  itemid:{type:String, null:false},
+  
   name:{ type:String ,default:'-'},
   price:{ type:String ,default:'-'},
   type:{ type:String ,default:'-'},

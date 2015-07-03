@@ -4,7 +4,10 @@ block main
     .row
       .col-md-4.col-md-offset-4.text-center#index
         include ../views/partials/logo
-          
+        .alert.alert-success(role='alert') Signed Up Successfully
+          button.close(type='button', data-dismiss='alert', aria-label='Close')
+            span(aria-hidden='true') ×
+
         form(action="/signin" method="post")
           .form-group
             input.form-control(type='email', placeholder='Email', name="email")
