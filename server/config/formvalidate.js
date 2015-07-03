@@ -11,7 +11,8 @@ var pass=document.forms["form"]["password"].value;
 var pass1=document.forms["form"]["password1"].value;
 var pasp =/^(?=.*[0-9])(?=.*[A-Z])[a-z A-Z 0-9]{6,12}$/;
 var pata=/^[0-9]{2,3}$/;
-var gender = document.getElementById("sex");
+var gender = document.forms["form"]["sex"].value;
+
 var r=patf.test(fname);
 var r3=pasp.test(pass);
 var r4=emf.test(email);

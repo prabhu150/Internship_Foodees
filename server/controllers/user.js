@@ -1,5 +1,5 @@
 var passport = require('passport');
-
+var Menu = require('../models/Menu');
 var User = require('../models/User');
 
 exports.getIndex =  function(req,res){
@@ -50,11 +50,17 @@ exports.getSignOut = function(req,res, next){
 exports.getDashboard = function(req,res){
     res.render('dashboard',{title:'Dashboard'});
 }
+exports.addorder = function (req,res)
+{
+res.render('edit-menu')
 
-// exports.postDeleteCustomer = function(req,res){
-//         User.remove({ _id:req.params.id }, function (err) {
-//             User.find(function(err){
-//             res.render('customer');
-//         });
-//     });
-// }
+Menu.find({_id:req.params.id},funtion(err,menus){
+
+
+  User.find({_id:req.user},function(err,users){
+    console.log(users);
+    console.log(menus);
+    //u need to check bash and see that both details are coming...just need to make that entry in users somehow
+  })
+});
+}

@@ -18,6 +18,15 @@ var userSchema = new mongoose.Schema({
     picture: { type: String, default: 'http://transmedia.trinity.edu/~amille10/minisite3/facebookpicture.jpg' },
 },
 
+uorder:
+{
+  itemid:{type:String, null:false},
+  name:{ type:String ,default:'-'},
+  price:{ type:String ,default:'-'},
+  type:{ type:String ,default:'-'},
+  category:{ type:String,default:'-'}
+},
+
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });

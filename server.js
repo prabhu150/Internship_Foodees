@@ -49,8 +49,7 @@ console.log('local mongodb opened');
 app.get('/', userController.getIndex);
 app.get('/about', userController.getAbout);
 app.get('/menu', menuController.getMenu);
-app.get('/ordernow', orderController.getOrderNow);
-app.post('/ordernow', orderController.postOrderNow);
+
 app.get('/working', userController.getWorking);
 app.get('/editmenu', menuController.getEditMenu);
 app.post('/editmenu', menuController.postEditMenu);
@@ -59,6 +58,14 @@ app.get('/signup', userController.getSignUp);
 app.post('/signup', userController.postSignUp);
 app.post('/signin', userController.postSignIn);
 app.get('/signout', userController.getSignOut);
+
+
+app.get('/addorder/:id', userController.addorder);
+ app.get('/removeorder/:id', userController.removeorder);
+
+
+
+
 
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }), function(req, res) {
