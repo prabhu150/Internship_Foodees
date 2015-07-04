@@ -1,5 +1,5 @@
 .cover-bg{
-	background: url(images/cover.jpg);
+	background: url(images/cover.jpg) ;
 	background-size: cover;
 	height: 100%;
 	width: 100%;
@@ -7,14 +7,20 @@
 	position: absolute;
 }
 
-.logo{
-	content: url(images/logo.png);
-	width: 90px;
-	height: 90px;
-}
 
+.logo
+{
+	content: url(images/logo.png);
+    width:100px;
+    height:100px;
+    border: 2px solid black;
+    border-radius:100px;
+    padding:10px;
+	margin:5px;
+	text-shadow: 2px 2px orangered;
+}
 .signup-bg{
-	background: url(images/tiffin-elegant.jpg);
+	background: url(images/cover2.jpg);
 	background-size: cover;
 	height: 100%;
 	width: 100%;

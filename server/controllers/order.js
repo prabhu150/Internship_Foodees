@@ -9,10 +9,7 @@ exports.postAddItem =  function(req,res){
 	    order.save(function(err, order){
 	    	res.redirect('/menu');
 	    });
-		
-
-	    
-    
+   
 }
 
 exports.postViewOrder = function(req,res){
@@ -27,12 +24,4 @@ exports.getAllOrders = function (req,res){
 
 	});
 }
-
-// exports.postRemoveItem =  function(req,res){
-//             Order.remove({ _id:req.params.id }, function (err) {
-//                                 Menu.find(function(err,menus){
-//                                 res.render('menu',{menus:menus, title: 'Menu'});
-//                             });
-//                         });
-// }
 

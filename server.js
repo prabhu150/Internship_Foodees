@@ -55,9 +55,16 @@ app.get('/working', userController.getWorking);
 app.get('/editmenu', menuController.getEditMenu);
 app.post('/editmenu', menuController.postEditMenu);
 app.post('/deleteitem/:id', menuController.postDeleteItem);
+
 app.get('/signup', userController.getSignUp);
 app.post('/signup', userController.postSignUp);
+app.get('/signedup',userController.gotSignedUp)
+
 app.post('/signin', userController.postSignIn);
+app.get('/wrongemail',userController.wrongEmail);
+app.get('/emailinuse',userController.emailUsed)
+
+
 app.get('/signout', userController.getSignOut);
 app.post('/additem/:id', orderController.postAddItem);
 //app.post('/removeitem/:id', orderController.postRemoveItem);
