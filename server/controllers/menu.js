@@ -1,4 +1,6 @@
 var Menu = require('../models/Menu');
+var Order = require('../models/Order');
+var User = require('../models/User');
 
 exports.getEditMenu = function(req,res){
     if(req.user)

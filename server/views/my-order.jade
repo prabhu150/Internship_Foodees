@@ -1,0 +1,17 @@
+extends ./includes/layout
+block main
+	h1 Your order
+	
+	.container
+		.row.text-center
+				each val in menus
+						.col-md-3.jumbotron
+							p= val.name
+							p= val.description
+							p= '₹'+val.price
+							p= val.category
+							if (user)
+								form(action="/removeorder/"+val._id method="post")
+									button.btn.btn-warning(type='submit') Remove 
+			form(action="/menu" method="get")
+				button.btn.btn-warning(type='submit') Add more items

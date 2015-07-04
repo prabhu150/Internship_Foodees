@@ -1,6 +1,7 @@
 var passport = require('passport');
 var Menu = require('../models/Menu');
 var User = require('../models/User');
+var Order = require('../models/Order');
 
 exports.getIndex =  function(req,res){
             res.render('index', {title:'Home'});

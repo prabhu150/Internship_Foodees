@@ -34,6 +34,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(function(req, res, next) {
   res.locals.user = req.user;
+  res.locals.order = req.order;
+  res.locals.menu = req.menu;
   next();
 });
 
@@ -49,7 +51,6 @@ console.log('local mongodb opened');
 app.get('/', userController.getIndex);
 app.get('/about', userController.getAbout);
 app.get('/menu', menuController.getMenu);
-
 app.get('/working', userController.getWorking);
 app.get('/editmenu', menuController.getEditMenu);
 app.post('/editmenu', menuController.postEditMenu);
@@ -58,14 +59,10 @@ app.get('/signup', userController.getSignUp);
 app.post('/signup', userController.postSignUp);
 app.post('/signin', userController.postSignIn);
 app.get('/signout', userController.getSignOut);
-
-
-app.get('/addorder/:id', userController.addorder);
- app.get('/removeorder/:id', userController.removeorder);
-
-
-
-
+app.post('/additem/:id', orderController.postAddItem);
+//app.post('/removeitem/:id', orderController.postRemoveItem);
+app.post('/vieworder', orderController.postViewOrder);
+app.get('/allorders', orderController.getAllOrders);
 
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }), function(req, res) {
