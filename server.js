@@ -32,6 +32,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(function(req, res, next) {
   res.locals.user = req.user;
   res.locals.order = req.order;
@@ -40,8 +41,8 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static('public')); //static route handling
-app.use(bodyParser.json());// assuming POST: {"name":"foo","color":"red"} <-- JSON encoding
-app.use(bodyParser.urlencoded({extended:true}));// assuming POST: name=foo&color=red <-- URL encoding
+app.use(bodyParser.json());//JSON encoding
+app.use(bodyParser.urlencoded({extended:true}));//URL encoding
 
 //Mongoose Connection with MongoDB
 mongoose.connect('mongodb://localhost/foodees');
@@ -55,16 +56,12 @@ app.get('/working', userController.getWorking);
 app.get('/editmenu', menuController.getEditMenu);
 app.post('/editmenu', menuController.postEditMenu);
 app.post('/deleteitem/:id', menuController.postDeleteItem);
-
 app.get('/signup', userController.getSignUp);
 app.post('/signup', userController.postSignUp);
 app.get('/signedup',userController.gotSignedUp)
-
 app.post('/signin', userController.postSignIn);
 app.get('/wrongemail',userController.wrongEmail);
 app.get('/emailinuse',userController.emailUsed)
-
-
 app.get('/signout', userController.getSignOut);
 app.post('/additem/:id', orderController.postAddItem);
 //app.post('/removeitem/:id', orderController.postRemoveItem);
@@ -78,9 +75,8 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRe
 
 app.get('/auth/google', passport.authenticate('google',  { scope:  ['profile' , 'email' , 'https://www.googleapis.com/auth/plus.login']}));
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), function(req, res) {
-res.redirect(req.session.returnTo || '/');
-  });
-
+  res.redirect(req.session.returnTo || '/');
+});
 
 app.listen(3000);
 console.log("Express server is listening at port 3000");
