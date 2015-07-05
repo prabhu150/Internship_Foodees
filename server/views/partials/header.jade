@@ -8,26 +8,6 @@ nav.navbar.navbar-inverse.navbar-fixed-top
             span.icon-bar
           a.navbar-brand(href='/') Foodees
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          if user
-            ul.nav.navbar-nav.navbar-right
-              li
-              .btn-group
-                  button.btn.btn-info(type='button')  Hi, #{user.profile.name}
-                  button.btn.btn-info.dropdown-toggle.dropdown-button(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                      span.caret
-                        |         
-                        span.sr-only Toggle Dropdown
-
-                  ul.dropdown-menu
-                    li
-                      img.img-circle.dropdown-profile-pic(src='#{user.profile.picture}')
-                    li
-                      a(href='#') Another action
-                    li
-                      a(href='#') Something else here
-                    li.divider(role='separator')
-                    li
-                      a(href='/signout') Logout
 
           ul.nav.navbar-nav.navbar-left
             li
@@ -44,6 +24,26 @@ nav.navbar.navbar-inverse.navbar-fixed-top
               li
                 a(href='/menu') Order now
 
+          if user
+            ul.nav.navbar-nav.navbar-right.dropdown-block
+              li
+              .btn-group
+                  button.btn.btn-info(type='button')  Hi, #{user.profile.name}
+                  button.btn.btn-info.dropdown-toggle.dropdown-arrow(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                      span.caret
+                        |         
+                        span.sr-only Toggle Dropdown
+
+                  ul.dropdown-menu
+                    li
+                      img.img-circle.dropdown-profile-pic(src='#{user.profile.picture}')
+                    li
+                      a(href='#') Another action
+                    li
+                      a(href='#') Something else here
+                    li.divider(role='separator')
+                    li
+                      a(href='/signout') Logout
 
 
 

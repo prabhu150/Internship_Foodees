@@ -2,37 +2,38 @@ extends ./includes/layout
 block main
 	.container-fluid.signup-bg
 		.row
-			.col-md-4.col-md-offset-2.text-center#signup
+			.col-md-4.col-md-offset-4.text-center#signup
 				include ../views/partials/logo
 				h2.titles SIGN UP
-				form(action='/signup' method='post' name="form")
-					input.form-control(type='text' placeholder='Name' name="name")
-					input.form-control(type='email' placeholder='Email' name="email")
-					input.form-control(type='password' placeholder='Password' name="password")
-					input.form-control(type='password' placeholder='Confirm Password' name="password1")
-					input(type='radio', name='sex', value='male')
-					| Male &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-					input(type='radio', name='sex', value='female')
-					| Female
-					br
-					input(type='checkbox', name='agree')
-					| I agree to the  
-					a( data-toggle='modal', data-target='#myModal')
-						| Terms and Conditions
-					#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
-						.modal-dialog(role='document')
-							.modal-content
-								.modal-header
-									button.close(type='button', data-dismiss='modal', aria-label='Close')
-										span(aria-hidden='true') ×
-									h3#myModalLabel.modal-title Terms and Conditions
-								.modal-body
-								p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi beatae atque veniam illum, ex amet omnis quae, vitae, similique quasi dolor itaque eum, vel incidunt minima? Amet debitis aliquid, similique!
-								p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolor ipsam dicta odit, voluptate aspernatur sed minima, deleniti debitis repellat a? Ad reiciendis accusantium doloribus natus repudiandae sequi, doloremque illo.
-								.modal-footer
-									button.btn.btn-default(type='button', data-dismiss='modal') Close
-					br
-					button.btn.btn-primary(type='submit' id='onSubmit' data-loading-text="Validating..." autocomplete="off" onmouseover="validate()") Signup
+				.form-group
+					form(action='/signup' method='post' name="form")
+						input.form-control(type='text' placeholder='Name' name="name")
+						input.form-control(type='email' placeholder='Email' name="email")
+						input.form-control(type='password' placeholder='Password' name="password")
+						input.form-control(type='password' placeholder='Confirm Password' name="password1")
+						input(type='radio', name='sex', value='male')
+						| Male &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+						input(type='radio', name='sex', value='female')
+						| Female
+						br
+						input(type='checkbox', name='agree')
+						| I agree to the  
+						a( data-toggle='modal', data-target='#myModal')
+							| Terms and Conditions
+						#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+							.modal-dialog(role='document')
+								.modal-content
+									.modal-header
+										button.close(type='button', data-dismiss='modal', aria-label='Close')
+											span(aria-hidden='true') ×
+										h3#myModalLabel.modal-title Terms and Conditions
+									.modal-body
+									p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi beatae atque veniam illum, ex amet omnis quae, vitae, similique quasi dolor itaque eum, vel incidunt minima? Amet debitis aliquid, similique!
+									p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolor ipsam dicta odit, voluptate aspernatur sed minima, deleniti debitis repellat a? Ad reiciendis accusantium doloribus natus repudiandae sequi, doloremque illo.
+									.modal-footer
+										button.btn.btn-default(type='button', data-dismiss='modal') Close
+						br
+						button.btn.btn-primary(type='submit' id='onSubmit' data-loading-text="Validating..." autocomplete="off" onmouseover="validate()") Signup
 
 									
 	include ../config/formvalidate.js 
