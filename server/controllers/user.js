@@ -61,29 +61,24 @@ exports.getSignOut = function(req,res, next){
   res.redirect('/');
 }
 
-exports.getDashboard = function(req,res){
-    res.render('dashboard',{title:'Dashboard'});
+exports.getDashBoard = function(req,res){
+    
+    User.find({_id:req.user.id},function(err,users)
+{
+if(err)
+  console.log(err);
+else
+  Order.find({u_id:req.user.id},function(err,orders)
+{
+  res.render('dashboard',{users:users,orders:orders});
 }
 
-
-
-exports.addorder = function (req,res){
-res.render('edit-menu');
-Menu.find({_id:req.params.id},function(err,menus){
-
-User.find({_id:req.user},function(err,users){
-    
+    );
   
 
-    console.log(users);
-    console.log(menus);
-   
+ } );
 
-    //u need to check bash and see that both details are coming...just need to make that entry in users somehow
-  });
-});
 }
-exports.removeorder = function (req,res)
-{
-res.render('edit-menu');
-}
+
+
+
