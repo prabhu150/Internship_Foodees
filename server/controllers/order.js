@@ -35,4 +35,11 @@ exports.getAllOrders = function (req,res){
 
 	});
 }
+exports.getDelivery = function(req,res){
+	var username = req.user.profile.name;
+	res.render('delivery');
+}
 
+exports.postDelivery = function(req,res){
+	 user.save();
+}
