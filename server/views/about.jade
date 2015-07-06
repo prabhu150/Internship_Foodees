@@ -1,0 +1,100 @@
+extends ./includes/layout
+block main
+	br
+	br
+	br
+	.container-fluid
+		.row
+			#carousel-example-generic.carousel.slide(data-ride='carousel').slides
+				ol.carousel-indicators
+					li.active(data-target='#carousel-example-generic', data-slide-to='0')
+					li(data-target='#carousel-example-generic', data-slide-to='1')
+					li(data-target='#carousel-example-generic', data-slide-to='2')
+					li(data-target='#carousel-example-generic', data-slide-to='3')
+					li(data-target='#carousel-example-generic', data-slide-to='4')
+					li(data-target='#carousel-example-generic', data-slide-to='5')
+					
+				.carousel-inner(role='listbox')
+					.item.active
+						img(src='../server/views/awesome.jpg', alt='...')
+						.carousel-caption
+					.item
+						img(src='images/cover2.jpg', alt='...')
+						.carousel-caption
+					.item
+						img(src='../public/css/images/cover3.JPG', alt='...')
+						.carousel-caption
+					.item
+						img(src='../public/css/images/cover4.JPG', alt='...')
+						.carousel-caption
+					.item
+						img(src='../public/css/images/dabbas.JPG', alt='...')
+						.carousel-caption
+					.item
+						img(src='../public/css/images/dabba.JPG', alt='...')
+						.carousel-caption
+				a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+					span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+					span.sr-only Previous
+				a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+					span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+					span.sr-only Next
+	.container
+		.row
+			.col-md-3.col-md-offset-1.boxes
+				h4 The Concept
+				p Are you tired of eating baingan/ lauki everyday? Is your diet dictated by your dabbawala?Yummy Tiffins offers you
+				ol(type='1' ).custom-counter
+					li Choice of deciding your own personalized menu
+					li Food packed in disposable containers.
+					li Delivery through world famous dabbawalas of Mumbai.
+				button.btn.btn-default.center-block(data-toggle='modal', data-target='#myModal')
+					| Read More
+				#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+					.modal-dialog(role='document')
+						.modal-content
+							.modal-header
+								button.close(type='button', data-dismiss='modal', aria-label='Close')
+									span(aria-hidden='true') ×
+								h3#myModalLabel.modal-title The Concept
+							.modal-body
+							p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi beatae atque veniam illum, ex amet omnis quae, vitae, similique quasi dolor itaque eum, vel incidunt minima? Amet debitis aliquid, similique!
+							p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolor ipsam dicta odit, voluptate aspernatur sed minima, deleniti debitis repellat a? Ad reiciendis accusantium doloribus natus repudiandae sequi, doloremque illo.
+							.modal-footer
+								button.btn.btn-default(type='button', data-dismiss='modal') Close		
+
+			.col-md-3.col-md-offset-1.boxes
+				h4 Why Us?
+				ol(type='1').custom-counter
+					li Tasty Food
+					li Select your own menu
+					li Disposable containers
+					li Fresh vegetables and spices
+					li No preservatives / artificial color
+					li No pre-cooked gravies
+					li Customized meals start at just Rs 60/-
+				button.btn.btn-default.center-block(data-toggle='modal', data-target='#myModal')
+					| Read More
+				#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+					.modal-dialog(role='document')
+						.modal-content
+							.modal-header
+								button.close(type='button', data-dismiss='modal', aria-label='Close')
+									span(aria-hidden='true') ×
+								h3#myModalLabel.modal-title Why Us?
+							.modal-body
+							p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi beatae atque veniam illum, ex amet omnis quae, vitae, similique quasi dolor itaque eum, vel incidunt minima? Amet debitis aliquid, similique!
+							p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolor ipsam dicta odit, voluptate aspernatur sed minima, deleniti debitis repellat a? Ad reiciendis accusantium doloribus natus repudiandae sequi, doloremque illo.
+							.modal-footer
+								button.btn.btn-default(type='button', data-dismiss='modal') Close		
+			
+			.col-md-3.col-md-offset-1.boxes
+				h4 Subscribe To Us
+				form(action='/')#subs
+					input(type='text', name='namesub' placeholder="Enter Name")
+					input(type='text', name='emailsub' placeholder="Enter Email ID")
+					input(type='text', name='phonesub' placeholder="Enter Phone No.")
+				
+					input(type='submit', value='Submit')
+					input(type='reset', value='Clear')
+	
