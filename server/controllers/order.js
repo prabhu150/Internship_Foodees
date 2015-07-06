@@ -14,14 +14,13 @@ exports.postAddItem =  function(req,res){
 
 exports.postViewOrder = function(req,res){
 	User.find(function(err, users){
-	  res.render('my-order',{users:users, title:'My Orders'});
+	  res.render('my-order',{orders:users, title:'My Orders'});
 	});
 }
 
 exports.getAllOrders = function (req,res){
-	Order.find().populate('m_id').exec(function(err, order) {
-		res.send(order);
-
+	Order.find().populate('m_id').exec(function(err, orders) {
+		res.render('my-order',{orders:orders, title:'My Orders'});
 	});
 }
 
