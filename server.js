@@ -64,9 +64,9 @@ app.get('/wrongemail',userController.wrongEmail);
 app.get('/emailinuse',userController.emailUsed)
 app.get('/signout', userController.getSignOut);
 app.post('/additem/:id', orderController.postAddItem);
-//app.post('/removeitem/:id', orderController.postRemoveItem);
+app.post('/removeorder/:id', orderController.postRemoveItem);
 app.post('/vieworder', orderController.postViewOrder);
-app.get('/allorders', orderController.getAllOrders);
+app.post('/allorders', orderController.getAllOrders);
 
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }), function(req, res) {

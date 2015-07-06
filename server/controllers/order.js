@@ -9,7 +9,18 @@ exports.postAddItem =  function(req,res){
 	    order.save(function(err, order){
 	    	res.redirect('/menu');
 	    });
-   
+ }
+exports.postRemoveItem =  function(req,res){
+Order.remove({m_id:req.params.id,u_id:req.user.id},function(err,order) // finds order by the menu item and user id 
+{
+	// doubt as to why findbyidandremove doesnt work
+	// issue when user orders multiple rotis as the .remove removes all orders
+	//solution is to findoneandremove instead of order.remove but we need to figure out the syntax for the same
+	    	Menu.find(function(err,menus){
+                    res.render('menu',{menus:menus, title: 'Menu'});
+                });
+
+});
 }
 
 exports.postViewOrder = function(req,res){
