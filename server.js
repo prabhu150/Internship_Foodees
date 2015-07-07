@@ -69,7 +69,7 @@ app.post('/removeorder/:id', orderController.postRemoveItem);
 app.post('/vieworder', orderController.postViewOrder);
 app.post('/allorders', orderController.getAllOrders);
 app.get('/delivery', orderController.getDelivery);
-app.post('/delivery', orderController.postDelivery);
+app.post('/delivery', userController.postDelivery);
 
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }), function(req, res) {

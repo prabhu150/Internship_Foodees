@@ -40,6 +40,3 @@ exports.getDelivery = function(req,res){
 	res.render('delivery');
 }
 
-exports.postDelivery = function(req,res){
-	 user.save();
-}
