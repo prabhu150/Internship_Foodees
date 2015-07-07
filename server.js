@@ -6,11 +6,13 @@ var passport = require('passport');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
+
 //Require Models
 var User = require('./server/models/User');
 var Menu = require('./server/models/Menu');
 var Order = require('./server/models/Order');
 var passportConf=require('./server/config/passport');
+var contactUs=require('./server/config/contact');
 
 //Require Controllers
 var userController = require('./server/controllers/user');
@@ -66,7 +68,9 @@ app.get('/signout', userController.getSignOut);
 app.post('/additem/:id', orderController.postAddItem);
 app.post('/removeorder/:id', orderController.postRemoveItem);
 app.post('/vieworder', orderController.postViewOrder);
-app.post('/allorders', orderController.getAllOrders);
+app.get('/allorders', orderController.getAllOrders);
+app.get('/contactus', contactUs.getContactUs);
+app.post('/contactus', contactUs.postContactUs);
 
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }), function(req, res) {
