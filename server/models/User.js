@@ -9,13 +9,14 @@ var userSchema = new mongoose.Schema({
   google: String,
   twitter: String,
   tokens: Array,
-  type:{type:String,default:'customer'},
+  type:{type:String,default:'Customer'},
 
   profile: {
     name: { type: String, default: '' },
     gender: { type: String, default: '' },
     location: { type: String, default: '' },
     picture: { type: String, default: 'http://transmedia.trinity.edu/~amille10/minisite3/facebookpicture.jpg' },
+    time: { type: Number, default: (new Date()).getTime() }, 
 },
 
   resetPasswordToken: String,

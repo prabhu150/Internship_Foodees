@@ -46,25 +46,39 @@ app.use(express.static('public')); //static route handling
 app.use(bodyParser.json());//JSON encoding
 app.use(bodyParser.urlencoded({extended:true}));//URL encoding
 
+
+// app.configure(function()
+// {
+//   app.use(bodyParser({uploadDir:__dirname+"/public/uploads"})); // for saving the files in public uploads
+// });
+
+
+
+
 //Mongoose Connection with MongoDB
 mongoose.connect('mongodb://localhost/foodees');
 console.log('local mongodb opened');
 
 //Routes
+// GET ROUTES
 app.get('/', userController.getIndex);
 app.get('/about', userController.getAbout);
 app.get('/menu', menuController.getMenu);
 app.get('/working', userController.getWorking);
 app.get('/editmenu', menuController.getEditMenu);
-app.post('/editmenu', menuController.postEditMenu);
-app.post('/deleteitem/:id', menuController.postDeleteItem);
 app.get('/signup', userController.getSignUp);
-app.post('/signup', userController.postSignUp);
 app.get('/signedup',userController.gotSignedUp)
-app.post('/signin', userController.postSignIn);
 app.get('/wrongemail',userController.wrongEmail);
 app.get('/emailinuse',userController.emailUsed)
 app.get('/signout', userController.getSignOut);
+app.get('/dashboard',userController.getDashBoard);
+
+
+//POST ROUTES
+app.post('/editmenu', menuController.postEditMenu);
+app.post('/deleteitem/:id', menuController.postDeleteItem);
+app.post('/signup', userController.postSignUp);
+app.post('/signin', userController.postSignIn);
 app.post('/additem/:id', orderController.postAddItem);
 app.post('/removeorder/:id', orderController.postRemoveItem);
 app.post('/vieworder', orderController.postViewOrder);
@@ -72,11 +86,39 @@ app.get('/allorders', orderController.getAllOrders);
 app.get('/contactus', contactUs.getContactUs);
 app.post('/contactus', contactUs.postContactUs);
 
+
+
+// app.post('/upload',function(req,res)
+// {
+//   console.dir(req.files.pic);
+//   var gridStoreWrite = new GridStore(db,new OBJECTID(),req.files.pic.name,"w",{chunkSize:1024, metadata:{username:"Prabhu"}});
+// }gridStoreWrite.writeFile(req.files.pic.path,function(err,result)
+// {
+// if(err)
+//   console.log("Write Error!");
+// else
+//   console.dir(result);
+// } ); )
+
+// // Image Uploading
+// app.get('/image/:id',function(req,res)
+// {
+// var id = req.params.id //getting id
+// var outPutFromDBFile =__dirname+"/public/FromDB_"+id+".png";
+
+
+// }
+
+//   );
+
+
+
+// FB LOGIN
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }), function(req, res) {
   res.redirect(req.session.returnTo || '/');
 });
-
+// GOOGLE LOGIN
 app.get('/auth/google', passport.authenticate('google',  { scope:  ['profile' , 'email' , 'https://www.googleapis.com/auth/plus.login']}));
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), function(req, res) {
   res.redirect(req.session.returnTo || '/');
