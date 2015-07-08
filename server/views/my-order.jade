@@ -18,7 +18,6 @@ block main
 				.col-md-4.text-center#settime
 					input(type='text').timepicker
 					.col-md-6#time
-					
 		.container#orders
 			.row.text-center
 					each val in orders
@@ -28,11 +27,8 @@ block main
 								p.price= val.m_id.price + "$" 
 								form(action="/removecartorder/"+val._id method="post")
 									button.btn.btn-warning(type='submit') Delete 
-		
 		form(action="/delivery")
 							button.btn.btn-warning(type='submit') Proceed to delivery
-			
-	
 		script(type="text/javascript", src="/vendor/jquery/dist/jquery.js")
 		script( type="text/javascript" src="/vendor/pickadate/lib/picker.js")
 		script( type="text/javascript" src="/vendor/pickadate/lib/picker.date.js")

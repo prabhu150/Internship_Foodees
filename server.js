@@ -46,10 +46,6 @@ app.use(express.static('public')); //static route handling
 app.use(bodyParser.json());//JSON encoding
 app.use(bodyParser.urlencoded({extended:true}));//URL encoding
 
-
-
-
-
 //Mongoose Connection with MongoDB
 mongoose.connect('mongodb://localhost/foodees');
 console.log('local mongodb opened');
