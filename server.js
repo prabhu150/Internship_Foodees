@@ -47,17 +47,9 @@ app.use(bodyParser.json());//JSON encoding
 app.use(bodyParser.urlencoded({extended:true}));//URL encoding
 
 
-<<<<<<< HEAD
-=======
-// app.configure(function()
-// {
-//   app.use(bodyParser({uploadDir:__dirname+"/public/uploads"})); // for saving the files in public uploads
-// });
 
 
 
-
->>>>>>> 9324f7b5e227b0c122883487438d93b89b7b92ef
 //Mongoose Connection with MongoDB
 mongoose.connect('mongodb://localhost/foodees');
 console.log('local mongodb opened');
@@ -72,9 +64,12 @@ app.get('/editmenu', menuController.getEditMenu);
 app.get('/signup', userController.getSignUp);
 app.get('/signedup',userController.gotSignedUp)
 app.get('/wrongemail',userController.wrongEmail);
-app.get('/emailinuse',userController.emailUsed)
+ app.get('/emailinuse',userController.emailUsed)
 app.get('/signout', userController.getSignOut);
 app.get('/dashboard',userController.getDashBoard);
+app.get('/allorders', orderController.getAllOrders);
+app.get('/delivery', orderController.getDelivery);
+app.get('/contactus', contactUs.getContactUs);
 
 
 //POST ROUTES
@@ -84,12 +79,11 @@ app.post('/signup', userController.postSignUp);
 app.post('/signin', userController.postSignIn);
 app.post('/additem/:id', orderController.postAddItem);
 app.post('/removeorder/:id', orderController.postRemoveItem);
-app.post('/removeorder/:id', orderController.postRemoveItem);
+app.post('/removecartorder/:id', orderController.postCartRemoveItem);
 app.post('/vieworder', orderController.postViewOrder);
-app.get('/delivery', orderController.getDelivery);
 app.post('/delivery', orderController.postDelivery);
-app.get('/contactus', contactUs.getContactUs);
 app.post('/contactus', contactUs.postContactUs);
+
 
 
 
@@ -111,10 +105,6 @@ app.post('/contactus', contactUs.postContactUs);
 // var id = req.params.id //getting id
 // var outPutFromDBFile =__dirname+"/public/FromDB_"+id+".png";
 
-
-// }
-
-//   );
 
 
 

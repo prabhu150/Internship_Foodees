@@ -92,6 +92,10 @@
 												button.btn.btn-warning(type='submit') Delete
 										else
 											form(action="/additem/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Add 
+											form(action="/removeorder/"+val._id method="post")
+												button.btn.btn-warning(type='submit') Remove    
+
 												button.btn.btn-warning(type='submit') Add     
 	#extra.tab-pane(role='tabpanel')
 		.container
@@ -156,6 +160,7 @@
 											form(action="/additem/"+val._id method="post")
 												button.btn.btn-warning(type='submit') Add 
 											
+
 
 	#desserts.tab-pane(role='tabpanel')
 		.container

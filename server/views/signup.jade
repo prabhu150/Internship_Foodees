@@ -1,5 +1,6 @@
 extends ./includes/layout
 block main
+	body
 	.container-fluid.signup-bg
 		.row
 			.col-md-4.col-md-offset-4.text-center#signup
@@ -36,5 +37,5 @@ block main
 						button.btn.btn-primary(type='submit' id='onSubmit' data-loading-text="Validating..." autocomplete="off" onmouseover="validate()") Signup
 
 									
-	include ../config/formvalidate.js 
+	script(type="text/javascript" src="js/formvalidate.js")
 

@@ -17,9 +17,9 @@ block main
 						input.form-control(type='text' placeholder='Landmark' name="line4")
 						input.form-control(type='text' placeholder='Area' name="line5")
 						input.form-control(type='text' placeholder='City' name="line6")
-						p Enter pincode to check for 1 hour delivery
 						input.form-control(type='text', maxlength='6', placeholder='Enter your Pincode', name='line7')
-						button.btn.btn-warning(type='button' onmouseover="pinvalidate()") Check
+						.msg 
+						button.btn.btn-warning(type='button' onclick="pinvalidate()") Check
 						form(action="/delivery" method="post")
 							button.btn.btn-warning(type='submit') Send my Dabba
-	include ../config/pinvalidate.js 
+	script(type="text/javascript" , src="js/pinvalidate.js")

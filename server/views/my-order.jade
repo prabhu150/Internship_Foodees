@@ -1,10 +1,42 @@
 extends ./includes/layout
 block main
-	h1 Your order
+		body
+		
+		.container-fluid.center-block#top
+			.row#contii
+				.col-md-3.col-md-offset-1
+					.button.btn.btn-success#billcalc(type='button') 	
+						font Calculate Bill
+					font.text-center.form-control-static#pay 0.00 
+			
+					
+					
+				.col-md-4.text-center
+					input(type='text').datepicker#setdate
+					.col-md-12#date
+					
+				.col-md-4.text-center#settime
+					input(type='text').timepicker
+					.col-md-6#time
+					
+		.container#orders
+			.row.text-center
+					each val in orders
+						if (val.u_id==user.id)
+							.col-md-3.col-md-offset-1.jumbotron
+								p= val.m_id.name
+								p.price= val.m_id.price + "$" 
+								form(action="/removecartorder/"+val._id method="post")
+									button.btn.btn-warning(type='submit') Delete 
+		
+		form(action="/delivery")
+							button.btn.btn-warning(type='submit') Proceed to delivery
+			
 	
-	.container
-		.row.text-center
-				each val in orders
-					if (val.u_id==user.id)
-						.col-md-3.jumbotron
-							p= val.m_id.name
+		script(type="text/javascript", src="/vendor/jquery/dist/jquery.js")
+		script( type="text/javascript" src="/vendor/pickadate/lib/picker.js")
+		script( type="text/javascript" src="/vendor/pickadate/lib/picker.date.js")
+		script( type="text/javascript" src="/vendor/pickadate/lib/picker.time.js")
+		script( type="text/javascript" src="/js/billcalculation.js")
+		
+
