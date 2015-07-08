@@ -103,39 +103,39 @@
 											form(action="/removeorder/"+val._id method="post")
 												button.btn.btn-warning(type='submit') Remove    
 
-	#extra.tab-pane(role='tabpanel')
-		.container
-			.row.text-center
-					each val in menus
-						if(val.type=="Extra")
-							if(val.category=="Veg.")
-								.col-md-3.jumbotron.veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
-									if (user)
-										if (user.type=="admin")
-											form(action="/deleteitem/"+val._id method="post")
-												button.btn.btn-warning(type='submit') Delete
-										else
-											form(action="/additem/"+val._id method="post")
-												button.btn.btn-warning(type='submit') Add 
-											form(action="/removeorder/"+val._id method="post")
-												button.btn.btn-warning(type='submit') Remove  
-							else  
-								.col-md-3.jumbotron.non-veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
-									if (user)
-										if (user.type=="admin")
-											form(action="/deleteitem/"+val._id method="post")
-												button.btn.btn-warning(type='submit') Delete
-										else
-											form(action="/additem/"+val._id method="post")
-												button.btn.btn-warning(type='submit') Add 
-											form(action="/removeorder/"+val._id method="post")
-												button.btn.btn-warning(type='submit') Remove  
+	//	#extra.tab-pane(role='tabpanel')
+			.container
+				.row.text-center
+						each val in menus
+							if(val.type=="Extra")
+								if(val.category=="Veg.")
+									.col-md-3.jumbotron.veg-block
+										p= val.name
+										p= val.description
+										p= '₹'+val.price
+										if (user)
+											if (user.type=="admin")
+												form(action="/deleteitem/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Delete
+											else
+												form(action="/additem/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Add 
+												form(action="/removeorder/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Remove  
+								else  
+									.col-md-3.jumbotron.non-veg-block
+										p= val.name
+										p= val.description
+										p= '₹'+val.price
+										if (user)
+											if (user.type=="admin")
+												form(action="/deleteitem/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Delete
+											else
+												form(action="/additem/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Add 
+												form(action="/removeorder/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Remove  
 
 	#juices.tab-pane(role='tabpanel')
 		.container
@@ -171,39 +171,39 @@
 											form(action="/removeorder/"+val._id method="post")
 												button.btn.btn-warning(type='submit') Remove  
 
-	#desserts.tab-pane(role='tabpanel')
-		.container
-			.row.text-center
-					each val in menus
-						if(val.type=="Desserts")
-							if(val.category=="Veg.")
-								.col-md-3.jumbotron.veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
-									if (user)
-										if (user.type=="admin")
-											form(action="/deleteitem/"+val._id method="post")
-												button.btn.btn-warning(type='submit') Delete
-										else
-											form(action="/additem/"+val._id method="post")
-												button.btn.btn-warning(type='submit') Add 
-											form(action="/removeorder/"+val._id method="post")
-												button.btn.btn-warning(type='submit') Remove  
-							else  
-								.col-md-3.jumbotron.non-veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
-									if (user)
-										if (user.type=="admin")
-											form(action="/deleteitem/"+val._id method="post")
-												button.btn.btn-warning(type='submit') Delete
-										else
-											form(action="/additem/"+val._id method="post")
-												button.btn.btn-warning(type='submit') Add 
-											form(action="/removeorder/"+val._id method="post")
-												button.btn.btn-warning(type='submit') Remove 
+	//	#desserts.tab-pane(role='tabpanel')
+			.container
+				.row.text-center
+						each val in menus
+							if(val.type=="Desserts")
+								if(val.category=="Veg.")
+									.col-md-3.jumbotron.veg-block
+										p= val.name
+										p= val.description
+										p= '₹'+val.price
+										if (user)
+											if (user.type=="admin")
+												form(action="/deleteitem/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Delete
+											else
+												form(action="/additem/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Add 
+												form(action="/removeorder/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Remove  
+								else  
+									.col-md-3.jumbotron.non-veg-block
+										p= val.name
+										p= val.description
+										p= '₹'+val.price
+										if (user)
+											if (user.type=="admin")
+												form(action="/deleteitem/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Delete
+											else
+												form(action="/additem/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Add 
+												form(action="/removeorder/"+val._id method="post")
+													button.btn.btn-warning(type='submit') Remove 
 .container
 	.row
 		form(action="/allorders" method='get')

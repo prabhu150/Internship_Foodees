@@ -10,7 +10,8 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.5",
-    "toastr": "~2.1.1"
+    "toastr": "~2.1.1",
+    "pickadate" : "3.5.6"
   }
 
 }

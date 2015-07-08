@@ -4,7 +4,7 @@ var mongoose= require('mongoose');
 var menuSchema = new mongoose.Schema({
     name: String,
 	description: String,
-	price: String,
+	price: Number,
 	type: String,
 	category: String
  });

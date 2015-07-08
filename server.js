@@ -67,9 +67,10 @@ app.get('/editmenu', menuController.getEditMenu);
 app.get('/signup', userController.getSignUp);
 app.get('/signedup',userController.gotSignedUp)
 app.get('/wrongemail',userController.wrongEmail);
-app.get('/emailinuse',userController.emailUsed)
+ app.get('/emailinuse',userController.emailUsed)
 app.get('/signout', userController.getSignOut);
 app.get('/dashboard',userController.getDashBoard);
+app.get('/allorders', orderController.getAllOrders);
 
 
 //POST ROUTES
@@ -79,8 +80,9 @@ app.post('/signup', userController.postSignUp);
 app.post('/signin', userController.postSignIn);
 app.post('/additem/:id', orderController.postAddItem);
 app.post('/removeorder/:id', orderController.postRemoveItem);
+app.post('/removecartorder/:id', orderController.postCartRemoveItem);
+
 app.post('/vieworder', orderController.postViewOrder);
-app.post('/allorders', orderController.getAllOrders);
 
 
 

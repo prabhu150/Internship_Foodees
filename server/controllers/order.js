@@ -23,6 +23,20 @@ Order.remove({m_id:req.params.id,u_id:req.user.id},function(err,order) // finds 
 });
 }
 
+
+exports.postCartRemoveItem =  function(req,res){
+Order.remove({_id:req.params.id,u_id:req.user.id},function(err,order) // finds order by the menu item and user id 
+{
+	    	Order.find().populate('m_id').exec(function(err, orders) {
+		res.render('my-order',{orders:orders, title:'My Orders'});
+	});
+
+});
+}
+
+
+
+
 exports.postViewOrder = function(req,res){
 	User.find(function(err, users){
 	  res.render('my-order',{orders:users, title:'My Orders'});
