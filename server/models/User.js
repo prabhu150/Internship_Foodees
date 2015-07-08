@@ -9,7 +9,7 @@ var userSchema = new mongoose.Schema({
   google: String,
   twitter: String,
   tokens: Array,
-  type:{type:String,default:'customer'},
+  type:{type:String,default:'Customer'},
 
   profile: {
     name: { type: String, default: '' },
@@ -25,6 +25,7 @@ var userSchema = new mongoose.Schema({
       line6: { type: String, default: '' },
       line7: { type: Number, default: '' },
     },
+    time: { type: Number, default: (new Date()).getTime() }, 
 },
 
   resetPasswordToken: String,

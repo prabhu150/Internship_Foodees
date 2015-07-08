@@ -12,8 +12,8 @@ passReqToCallback:true
 };
 
 var google={
-clientID:'535379061302-5d5oca06vtl9g09rltpflmkgv34thgop.apps.googleusercontent.com',
-clientSecret:'MsdYCoCnGcZXWyftJJ8ZCgD6',
+clientID:'34927116477-h8t00jcd7g6453taafdaaat3on4ic79i.apps.googleusercontent.com',
+clientSecret:'ITJEsJKlIZdZDFTCEcBEJJUY',
 callbackURL:'/auth/google/callback',
 };
 

@@ -23,6 +23,8 @@ nav.navbar.navbar-inverse.navbar-fixed-top
             if(user)
               li
                 a(href='/menu') Order now
+            li
+              a(href='/contactus') Contact Us
 
           if user
             ul.nav.navbar-nav.navbar-right.dropdown-block
@@ -38,9 +40,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top
                     li
                       img.img-circle.dropdown-profile-pic(src='#{user.profile.picture}')
                     li
-                      a(href='#') Another action
+                      a(href='/dashboard') My Profile 
                     li
-                      a(href='#') Something else here
+                      a(href='#') My Orders
                     li.divider(role='separator')
                     li
                       a(href='/signout') Logout

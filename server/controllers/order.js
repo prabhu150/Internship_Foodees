@@ -25,14 +25,13 @@ Order.remove({m_id:req.params.id,u_id:req.user.id},function(err,order) // finds 
 
 exports.postViewOrder = function(req,res){
 	User.find(function(err, users){
-	  res.render('my-order',{users:users, title:'My Orders'});
+	  res.render('my-order',{orders:users, title:'My Orders'});
 	});
 }
 
 exports.getAllOrders = function (req,res){
-	Order.find().populate('m_id').exec(function(err, order) {
-		res.render('my-order',{order:order});
-
+	Order.find().populate('m_id').exec(function(err, orders) {
+		res.render('my-order',{orders:orders, title:'My Orders'});
 	});
 }
 exports.getDelivery = function(req,res){
