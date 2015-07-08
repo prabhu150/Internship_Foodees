@@ -64,8 +64,3 @@ exports.getSignOut = function(req,res, next){
 exports.getDashboard = function(req,res){
     res.render('dashboard',{title:'Dashboard'});
 }
-exports.postDelivery = function(req,res){
-   var user = new User({profile:{address:{line1:req.body.line1,line2:req.body.line2,line3:req.body.line3,line4:req.body.line4,line5:req.body.line5,line6:req.body.line6,line7:req.body.line7}}});
-    user.save();
-    res.redirect('/menu');
-}

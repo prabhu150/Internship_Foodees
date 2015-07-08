@@ -7,7 +7,7 @@ block main
 		.row
 			.col-md-4.col-md-offset-4.text-center
 				.form-group
-					form(action='/delivery' method='post' name="form")
+					form(action='/delivery' method='post' name="form1")
 						p Name
 						input.form-control(type='text', placeholder= '#{user.profile.name}', readonly='')
 						p Address
@@ -18,15 +18,8 @@ block main
 						input.form-control(type='text' placeholder='Area' name="line5")
 						input.form-control(type='text' placeholder='City' name="line6")
 						p Enter pincode to check for 1 hour delivery
-						input.pincode.fk-input.vmiddle.fk-pincode-text-fld(type='text', maxlength='6', placeholder='Enter your Pincode', autocomplete='off', value='', required='required', name='line7')
-						input.btn-check.btn.vmiddle(type='submit', href='javascript:void(0)', value='Check')
-
-
-						.form-group
-							.checkbox
-								label
-									input(type='checkbox')
-									|  I want 1 hour delivery
-
+						input.form-control(type='text', maxlength='6', placeholder='Enter your Pincode', name='line7')
+						button.btn.btn-warning(type='button' onmouseover="pinvalidate()") Check
 						form(action="/delivery" method="post")
 							button.btn.btn-warning(type='submit') Send my Dabba
+	include ../config/pinvalidate.js 

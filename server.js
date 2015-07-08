@@ -44,6 +44,7 @@ app.use(express.static('public')); //static route handling
 app.use(bodyParser.json());//JSON encoding
 app.use(bodyParser.urlencoded({extended:true}));//URL encoding
 
+
 //Mongoose Connection with MongoDB
 mongoose.connect('mongodb://localhost/foodees');
 console.log('local mongodb opened');
@@ -69,7 +70,7 @@ app.post('/removeorder/:id', orderController.postRemoveItem);
 app.post('/vieworder', orderController.postViewOrder);
 app.post('/allorders', orderController.getAllOrders);
 app.get('/delivery', orderController.getDelivery);
-app.post('/delivery', userController.postDelivery);
+app.post('/delivery', orderController.postDelivery);
 
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/' }), function(req, res) {
