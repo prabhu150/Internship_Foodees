@@ -1,4 +1,4 @@
-<script>	
+
 function validate()
 {
 
@@ -36,4 +36,3 @@ if(msg!="")
 
 
 
-</script>	

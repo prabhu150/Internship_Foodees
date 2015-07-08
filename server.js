@@ -6,11 +6,13 @@ var passport = require('passport');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
+
 //Require Models
 var User = require('./server/models/User');
 var Menu = require('./server/models/Menu');
 var Order = require('./server/models/Order');
 var passportConf=require('./server/config/passport');
+var contactUs=require('./server/config/contact');
 
 //Require Controllers
 var userController = require('./server/controllers/user');
@@ -45,13 +47,6 @@ app.use(bodyParser.json());//JSON encoding
 app.use(bodyParser.urlencoded({extended:true}));//URL encoding
 
 
-// app.configure(function()
-// {
-//   app.use(bodyParser({uploadDir:__dirname+"/public/uploads"})); // for saving the files in public uploads
-// });
-
-
-
 
 //Mongoose Connection with MongoDB
 mongoose.connect('mongodb://localhost/foodees');
@@ -71,6 +66,8 @@ app.get('/wrongemail',userController.wrongEmail);
 app.get('/signout', userController.getSignOut);
 app.get('/dashboard',userController.getDashBoard);
 app.get('/allorders', orderController.getAllOrders);
+app.get('/delivery', orderController.getDelivery);
+app.get('/contactus', contactUs.getContactUs);
 
 
 //POST ROUTES
@@ -81,8 +78,10 @@ app.post('/signin', userController.postSignIn);
 app.post('/additem/:id', orderController.postAddItem);
 app.post('/removeorder/:id', orderController.postRemoveItem);
 app.post('/removecartorder/:id', orderController.postCartRemoveItem);
-
 app.post('/vieworder', orderController.postViewOrder);
+app.post('/delivery', orderController.postDelivery);
+app.post('/contactus', contactUs.postContactUs);
+
 
 
 

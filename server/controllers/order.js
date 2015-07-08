@@ -48,4 +48,20 @@ exports.getAllOrders = function (req,res){
 		res.render('my-order',{orders:orders, title:'My Orders'});
 	});
 }
+exports.getDelivery = function(req,res){
+	var username = req.user.profile.name;
+	res.render('delivery',{title:'Delivery Details'});
+}
 
+exports.postDelivery = function(req,res)
+{
+  User.findByIdAndUpdate({_id:req.user},
+    {$set:{profile:{address:{line1:req.body.line1,line2:req.body.line2,line3:req.body.line3,line4:req.body.line4,line5:req.body.line5,line6:req.body.line6,line7:req.body.line7}}}},
+    {safe: true, upsert:true},function(err,users){
+    	console.log('entered')});
+    // user.save();
+    // User.find(function(err, users){
+    //       res.render('delivery',{users:users});
+    //     });
+    console.log('Ready');
+}

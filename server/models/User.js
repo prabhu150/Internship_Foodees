@@ -16,6 +16,15 @@ var userSchema = new mongoose.Schema({
     gender: { type: String, default: '' },
     location: { type: String, default: '' },
     picture: { type: String, default: 'http://transmedia.trinity.edu/~amille10/minisite3/facebookpicture.jpg' },
+    address: {
+      line1: { type: String, default: '' },
+      line2: { type: String, default: '' },
+      line3: { type: String, default: '' },
+      line4: { type: String, default: '' },
+      line5: { type: String, default: '' },
+      line6: { type: String, default: '' },
+      line7: { type: Number, default: '' },
+    },
     time: { type: Number, default: (new Date()).getTime() }, 
 },
 
