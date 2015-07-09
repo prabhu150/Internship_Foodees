@@ -1,0 +1,94 @@
+//@extend-elements
+//original selectors
+//.logo > svg, .logo > div
+%extend_1 {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+
+
+
+.logo {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    > {
+        svg {
+            @extend %extend_1;
+            fill: $white;
+        }
+        div {
+            @extend %extend_1;
+            width: 160px;
+            height: 160px;
+            margin: 20px;
+            //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+            border-radius: 14%;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+            transform: rotate(45deg);
+            mix-blend-mode: multiply;
+            -webkit-animation: 2s cubic-bezier(0.66, -0.7, 0.27, 1.6) infinite;
+            animation: 2s cubic-bezier(0.66, -0.7, 0.27, 1.6) infinite;
+            &:nth-child(1) {
+                background-color: #54ffff;
+                -webkit-animation-name: rotate-1;
+                animation-name: rotate-1;
+            }
+            &:nth-child(2) {
+                background-color: #ff73ff;
+                -webkit-animation-name: rotate-2;
+                animation-name: rotate-2;
+            }
+            &:nth-child(3) {
+                background-color: #ffffa2;
+                -webkit-animation-name: rotate-3;
+                animation-name: rotate-3;
+            }
+        }
+    }
+}
+@-webkit-keyframes rotate-1 {
+    to {
+        -webkit-transform: rotate(135deg);
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(135deg);
+    }
+}
+@keyframes rotate-1 {
+    to {
+        -webkit-transform: rotate(135deg);
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(135deg);
+    }
+}
+@-webkit-keyframes rotate-2 {
+    to {
+        -webkit-transform: rotate(225deg);
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(225deg);
+    }
+}
+@keyframes rotate-2 {
+    to {
+        -webkit-transform: rotate(225deg);
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(225deg);
+    }
+}
+@-webkit-keyframes rotate-3 {
+    to {
+        -webkit-transform: rotate(315deg);
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(315deg);
+    }
+}
+@keyframes rotate-3 {
+    to {
+        -webkit-transform: rotate(315deg);
+        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+        transform: rotate(315deg);
+    }
+}
