@@ -100,7 +100,6 @@ passport.use(new FacebookStrategy(facebook, function(req, accessToken, refreshTo
     });
   }
 }));
-
 /**
  * Sign in with Google+.
  */

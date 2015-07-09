@@ -68,3 +68,10 @@ $('#pay').text(parseInt(sum));
 
  
 
+<<<<<<< HEAD
+
+
+
+
+=======
+>>>>>>> cbffb876e08230e8e9f181b5d03753f1662229de
