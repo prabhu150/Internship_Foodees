@@ -26,6 +26,7 @@ var userSchema = new mongoose.Schema({
       line7: { type: Number, default: '' },
     },
     time: { type: Number, default: (new Date()).getTime() }, 
+    location: {type: String, default: ''}
 },
 
   resetPasswordToken: String,

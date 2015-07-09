@@ -35,26 +35,13 @@ block main
 						button.list-group-item(type='button')
 						button.list-group-item(type='button')
 						button.list-group-item(type='button')
+
+	.container
+		.row.text-center
+			if (user.type=='Customer')
+				.row.text-center
+					.col-md-10.col-md-offset-1
+						font Your #{user.location}
+
 	script(type="text/javascript",src="vendor/pace/pace.js")
 					
-					
-
-			
-
-
-
-
-			
-
-
-
-
-	//- h2 Profile Details
-	//- ol
-	//- 	each val in users
-	//- 		li  #{val.email}
-	//- 		li  #{val.profile.name}
-	//- 		li #{val.profile.gender}
-	//- 		li #{val.profile.location}
-	//- 		li #{val.profile.picture}
-	//- 		li #{val.type}

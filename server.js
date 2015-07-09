@@ -61,12 +61,13 @@ app.get('/editmenu', menuController.getEditMenu);
 app.get('/signup', userController.getSignUp);
 app.get('/signedup',userController.gotSignedUp)
 app.get('/wrongemail',userController.wrongEmail);
- app.get('/emailinuse',userController.emailUsed)
+app.get('/emailinuse',userController.emailUsed)
 app.get('/signout', userController.getSignOut);
 app.get('/dashboard',userController.getDashBoard);
 app.get('/allorders', orderController.getAllOrders);
 app.get('/delivery', orderController.getDelivery);
 app.get('/contactus', contactUs.getContactUs);
+app.get('/updatelocation', orderController.getUpdateLocation);
 
 
 //POST ROUTES
@@ -80,29 +81,7 @@ app.post('/removecartorder/:id', orderController.postCartRemoveItem);
 app.post('/vieworder', orderController.postViewOrder);
 app.post('/delivery', orderController.postDelivery);
 app.post('/contactus', contactUs.postContactUs);
-
-
-
-
-// app.post('/upload',function(req,res)
-// {
-//   console.dir(req.files.pic);
-//   var gridStoreWrite = new GridStore(db,new OBJECTID(),req.files.pic.name,"w",{chunkSize:1024, metadata:{username:"Prabhu"}});
-// }gridStoreWrite.writeFile(req.files.pic.path,function(err,result)
-// {
-// if(err)
-//   console.log("Write Error!");
-// else
-//   console.dir(result);
-// } ); )
-
-// // Image Uploading
-// app.get('/image/:id',function(req,res)
-// {
-// var id = req.params.id //getting id
-// var outPutFromDBFile =__dirname+"/public/FromDB_"+id+".png";
-
-
+app.post('/updatelocation', orderController.postUpdateLocation);
 
 
 // FB LOGIN

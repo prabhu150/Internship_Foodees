@@ -1,0 +1,22 @@
+.container
+		.row.text-center
+				.col-md-6
+					.list-group
+						each val in users
+							br
+							button.list-group-item(type='button' class='c-email' ) 
+								p(id="cemail")= val.email
+				.col-md-6
+					form(action='/updatelocation'+val.email method='post')
+						input.form-control(type='text' placeholder='Customer\'s email' name="email")
+						select.form-control(name='location')
+							option Order is received
+							option Food is being cooked
+							option Dabba is being packed
+							option Dabba on its way
+							option Dabba is delivered
+							option Dabba is returned
+						button.btn.btn-default(type='submit') Update
+
+script(type='text/javascript' src='vendor/jquery/dist/jquery.js')
+script(type='text/javascript' src='js/updatelocation.js')
