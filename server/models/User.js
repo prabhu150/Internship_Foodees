@@ -10,7 +10,7 @@ var userSchema = new mongoose.Schema({
   twitter: String,
   tokens: Array,
   type:{type:String,default:'Customer'},
-
+  location: {type: String, default: ''},
   profile: {
     name: { type: String, default: '' },
     gender: { type: String, default: '' },
@@ -26,7 +26,6 @@ var userSchema = new mongoose.Schema({
       line7: { type: Number, default: '' },
     },
     time: { type: Number, default: (new Date()).getTime() }, 
-    location: {type: String, default: ''}
 },
 
   resetPasswordToken: String,
