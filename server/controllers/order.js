@@ -65,11 +65,28 @@ exports.getUpdateLocation = function(req,res){
 }	
 
 exports.postUpdateLocation = function(req,res){
+
 	User.update({email:req.body.email},
-		{location:req.body.location},
+		{profile:{location:req.body.location}},
 		{safe: true, upsert:true}, function(err,users){
 		console.log(users);
     	console.log('updated');
-    	res.render('update-location',{users:users, title:'Update location'});
+User.find(function(err,users){
+ 	res.render('update-location',{users:users, title:'Update location'});
+});
+   
+    
+
     });
 }
+
+
+
+// User.findByIdAndUpdate({email:req.body.gemail},
+//     	{$set:{profile:{location:req.body.location}}},
+//     	{safe: true, upsert:true},function(err,users){
+//     	console.log('updated');
+// User.find(function(err,users){
+//  	res.render('update-location',{users:users, title:'Update location'});
+// });
+

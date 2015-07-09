@@ -13,3 +13,20 @@ var menuSchema = new mongoose.Schema({
 var Menu = mongoose.model('Menu',menuSchema);
 module.exports = Menu;
 
+var defaultMenu =[
+{
+    "name" : "Aloo Vada",
+    "description" : "Street Side Snack",
+    "price" : "30",
+    "type" : "Rice",
+    "category" : "Veg.",
+    
+},
+{
+    "name" : "Paneer Lajavab",
+    "description" : "Paneer",
+    "price" : "80",
+    "type" : "Gravy",
+    "category" : "Non-veg.",
+}
+] // how to add this inside menu such that admin can edit it...inside mongodb how to put ?

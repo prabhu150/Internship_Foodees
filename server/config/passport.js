@@ -118,6 +118,7 @@ passport.use(new GoogleStrategy(google, function(req, accessToken, refreshToken,
           user.profile.gender = user.profile.gender || profile._json.gender;
           user.profile.name = user.profile.displayName || profile.displayName;
           user.email = profile.emails[0].value;
+user.profile.picture = profile.photos[0].value + "0";    
           user.save(function(err) {
             console.log('Google account has been linked.');
             done(err, user);
@@ -144,7 +145,7 @@ passport.use(new GoogleStrategy(google, function(req, accessToken, refreshToken,
           user.google = profile.id;
           user.tokens.push({ kind: 'google', accessToken: accessToken });
 
-          user.profile.picture = profile.photos[0].value;    
+          user.profile.picture = profile.photos[0].value + "0";    
           user.profile.gender = profile._json.gender;
           user.save(function(err) {
             done(err, user);
