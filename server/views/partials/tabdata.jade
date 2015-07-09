@@ -195,5 +195,6 @@
 											
 .container
 	.row
-		form(action="/allorders" method='get')
-			button.btn.btn-warning(type='submit') View Order 
+		if (user)
+			form(action="/allorders" method='get')
+				button.btn.btn-warning(type='submit') View Order 

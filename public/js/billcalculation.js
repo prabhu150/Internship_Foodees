@@ -23,7 +23,8 @@ var tommorow= day + "/" +month+"/"+year ;
 var $inputdate = $( '.datepicker' ).pickadate({
             formatSubmit: 'yyyy/mm/dd',
              min:new Date(year,month,day) ,
-            
+           max:new Date(year,month+1,day),
+            hiddenName: true,
             container: '#date',
             // editable: true,
             closeOnSelect: true,
@@ -35,6 +36,8 @@ var $inputdate = $( '.datepicker' ).pickadate({
 
 $('#setdate').click(function(){
 var pickerdate = $inputdate.pickadate('picker')
+
+
 });
 
 $('#settime').click(function(){
@@ -42,6 +45,9 @@ $('#settime').click(function(){
 
      var pickertime = $inputtime.pickatime('picker')
         pickertime.open()
+
+
+
 });
         
 
@@ -74,11 +80,13 @@ $('#deliver').removeClass("disabled");
   $('#addmore').addClass("disabled");
   });
 
-// $('#orderconfirm').hover(function()  DONT ERASE DOUBT IS DER!
+// $('#orderconfirm').hover(function()  
 //   {
     
-//     var date=$('#dated').value;
-//     var time =$("#timed").value;
+//     var d=$("#data-value").text;
+// var date = toString(d);
+//     alert(date);
+//     //var time =$("#timed").value;
     
 //     var msg = "";
 // $("#datemsg").text("");

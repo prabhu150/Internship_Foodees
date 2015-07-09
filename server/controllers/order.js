@@ -41,26 +41,61 @@ exports.postViewOrder = function(req,res){
 }
 
 exports.getAllOrders = function (req,res){
+	
+if(req.user)
 	Order.find().populate('m_id').exec(function(err, orders) {
 		res.render('my-order',{orders:orders, title:'My Orders'});
 	});
+else
+	res.redirect('/');
 }
 exports.getDelivery = function(req,res){
+	
+
 	var username = req.user.profile.name;
-	res.render('delivery',{title:'Delivery Details'});
+if(req.user)
+	{
+		// some IF condition comes here...otherwise all logged in users get entry without ordering stuff
+		res.render('delivery',{title:'Delivery Details'});
+//else redirect to dashboard
+	}
+
+
+else
+	res.redirect('/');
+
 }
 
 exports.postDelivery = function(req,res){
   User.findByIdAndUpdate({_id:req.user},
-    {$set:{profile:{address:{line1:req.body.line1,line2:req.body.line2,line3:req.body.line3,line4:req.body.line4,line5:req.body.line5,line6:req.body.line6,line7:req.body.line7}}}},
-    {safe: true, upsert:true},function(err,users){
-    	console.log('entered')});
+    {$set:{address:{line1:req.body.line1,line2:req.body.line2,line3:req.body.line3,line4:req.body.line4,line5:req.body.line5,line6:req.body.line6,line7:req.body.line7},tiffinstatus:"Order is received"}},function(err,users){
+    	console.log('entered');
+
+res.render("dashboard",{users:users,title:'Order Placed!'});
+
+
+ 
+
+
+    });
     console.log('Ready');
 }
 
 exports.getUpdateLocation = function(req,res){
+
+
 	User.find(function(err, users){
+if(req.user)
+	  
+{
+	if(req.user.type=="admin")
 	  res.render('update-location',{users:users, title:'Update location'});
+else
+	res.redirect("/");
+}
+else
+	res.redirect("/");
+
 	});
 }	
 

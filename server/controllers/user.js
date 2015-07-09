@@ -62,7 +62,7 @@ exports.getSignOut = function(req,res, next){
 }
 
 exports.getDashBoard = function(req,res){
-    
+    if(req.user)
     User.find({_id:req.user.id},function(err,users)
 {
 if(err)
@@ -73,5 +73,9 @@ else
   res.render('dashboard',{users:users,orders:orders});
 });
    } );
+
+else
+  res.redirect("/");
+
 
 }

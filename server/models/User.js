@@ -10,14 +10,18 @@ var userSchema = new mongoose.Schema({
   twitter: String,
   tokens: Array,
   type:{type:String,default:'Customer'},
-  tiffinstatus:String,
-
+  tiffinstatus:{type:String,default:'Order not sent'},
+  
   profile: {
     name: { type: String, default: '' },
     gender: { type: String, default: '' },
     location: {type: String, default: ''},
     picture: { type: String, default: 'http://transmedia.trinity.edu/~amille10/minisite3/facebookpicture.jpg' },
-    address: {
+    time: { type: String, default: (new Date()).getFullYear() }, 
+},
+
+
+address: {
       line1: { type: String, default: '' },
       line2: { type: String, default: '' },
       line3: { type: String, default: '' },
@@ -26,9 +30,7 @@ var userSchema = new mongoose.Schema({
       line6: { type: String, default: '' },
       line7: { type: Number, default: '' },
     },
-    time: { type: Number, default: (new Date()).getTime() }, 
-},
-
+    
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });

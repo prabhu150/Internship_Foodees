@@ -11,7 +11,7 @@ block main
 					hr
 					
 					span.glyphicon.glyphicon-time.profile-icon(aria-hidden='true')
-					font Joined on #{user.profile.time}
+					font Joined on !{user.profile.time}
 					hr
 
 				.col-md-8#details
@@ -42,7 +42,7 @@ block main
 				if (user.type=='Customer')
 					.row.text-center
 						.col-md-10.col-md-offset-1
-							font Your #{user.location}
+							font Your #{user.tiffinstatus}
 
 	script(type="text/javascript",src="vendor/pace/pace.js")
 					
