@@ -10,11 +10,12 @@ var userSchema = new mongoose.Schema({
   twitter: String,
   tokens: Array,
   type:{type:String,default:'Customer'},
-  location: {type: String, default: ''},
+  tiffinstatus:String,
+
   profile: {
     name: { type: String, default: '' },
     gender: { type: String, default: '' },
-    location: { type: String, default: '' },
+    location: {type: String, default: ''},
     picture: { type: String, default: 'http://transmedia.trinity.edu/~amille10/minisite3/facebookpicture.jpg' },
     address: {
       line1: { type: String, default: '' },

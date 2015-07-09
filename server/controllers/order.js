@@ -67,10 +67,10 @@ exports.getUpdateLocation = function(req,res){
 exports.postUpdateLocation = function(req,res){
 
 	User.update({email:req.body.email},
-		{profile:{location:req.body.location}},
+		{tiffinstatus:req.body.location},
 		{safe: true, upsert:true}, function(err,users){
 		console.log(users);
-    	console.log('updated');
+		    	console.log('updated');
 User.find(function(err,users){
  	res.render('update-location',{users:users, title:'Update location'});
 });

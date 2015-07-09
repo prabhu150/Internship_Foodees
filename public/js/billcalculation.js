@@ -14,10 +14,15 @@ min: new Date(2015,1,20,9),
   }
    })
 
+var x=new Date();
+var day= x.getDate()+1;
+var month= x.getMonth();
+var year= x.getFullYear();
+var tommorow= day + "/" +month+"/"+year ;
 
 var $inputdate = $( '.datepicker' ).pickadate({
             formatSubmit: 'yyyy/mm/dd',
-             min: 'Today',
+             min:new Date(year,month,day) ,
             
             container: '#date',
             // editable: true,
@@ -30,7 +35,6 @@ var $inputdate = $( '.datepicker' ).pickadate({
 
 $('#setdate').click(function(){
 var pickerdate = $inputdate.pickadate('picker')
-
 });
 
 $('#settime').click(function(){
@@ -42,10 +46,6 @@ $('#settime').click(function(){
         
 
    
-
-
-
-
 $('#billcalc').click(function(){
 var sum = 0;
 $('.price').each(function(){
@@ -66,12 +66,34 @@ $('#pay').text(parseInt(sum));
 
 
 
- 
+$('#orderconfirm').click(function()
+  {
+$('#ordermsg').text("Done!");
+$('#deliver').removeClass("disabled");
+  $(".deletebutton").addClass("sr-only");
+  $('#addmore').addClass("disabled");
+  });
 
-<<<<<<< HEAD
+// $('#orderconfirm').hover(function()  DONT ERASE DOUBT IS DER!
+//   {
+    
+//     var date=$('#dated').value;
+//     var time =$("#timed").value;
+    
+//     var msg = "";
+// $("#datemsg").text("");
+// $("#timemsg").text("");
+
+// if(!date)
+//   {msg+="date not set";
+// $('#ordermsg').text("Try Again!");
+// $("#datemsg").text("Please Enter Proper Date");}
+
+// if(!time)
+//   {msg+="time not set";
+// $('#ordermsg').text("Try Again!");
+
+// $("#timemsg").text("Please Enter Proper Time");}
 
 
-
-
-=======
->>>>>>> cbffb876e08230e8e9f181b5d03753f1662229de
+// });

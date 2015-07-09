@@ -2,33 +2,63 @@ extends ./includes/layout
 block main
 		body
 		
-		.container-fluid.center-block#top
-			.row#contii
-				.col-md-3.col-md-offset-1
-					.button.btn.btn-success#billcalc(type='button') 	
-						font Calculate Bill
-					font.text-center.form-control-static#pay 0.00 
+			.container-fluid#top
+				.row#contii.center-block
+					.col-md-6
+						.col-md-3.col-md-offset-1
+							a.button.btn.btn-default#addmore(type="button" href="/menu")
+							
+								i.fa.fa-arrow-left 
+								
+								font Add More
+
+
+						.col-md-3.col-md-offset-1
+							.button.btn.btn-success#billcalc(type='button') 	
+								font Calculate Bill
+							font.text-center.form-control-static#pay 0.00 
+					
+						.col-md-3.col-md-offset-1#setdate
+
+								input(type='text' placeholder="Click Me To Enter Date" value="" id="dated").datepicker
+								#datemsg
+							.col-md-6#date
+							
+					.col-md-6
+					
+						.col-md-3.col-md-offset-1#settime
+							input(type='text' placeholder="Click Me To Enter Time" value="" id="timed").timepicker
+							#timemsg
+							.col-md-6#time
+
+						.col-md-3.col-md-offset-1
+							a.button.btn.btn-danger(type="button"  id="orderconfirm")
+								font#ordermsg Confirm Order
+							
+						.col-md-3.col-md-offset-1
+								//form-control-static(action="/delivery")
+								a.button.btn.btn-default.disabled(type="button" href="/delivery" id="deliver")
+									font Proceed To Delivery
+									i.fa.fa-arrow-right
+								#deliverymsg 
+
+
+
+			.container#orders
+				.row.text-center
+						each val in orders
+							if (val.u_id==user.id)
+								.col-md-3.col-md-offset-1.jumbotron
+									p= val.m_id.name
+									p.price= val.m_id.price + "$" 
+									form(action="/removecartorder/"+val._id method="post")
+										button.btn.btn-warning.deletebutton(type='submit') Delete 
 			
-					
-					
-				.col-md-4.text-center
-					input(type='text').datepicker#setdate
-					.col-md-12#date
-					
-				.col-md-4.text-center#settime
-					input(type='text').timepicker
-					.col-md-6#time
-		.container#orders
-			.row.text-center
-					each val in orders
-						if (val.u_id==user.id)
-							.col-md-3.col-md-offset-1.jumbotron
-								p= val.m_id.name
-								p.price= val.m_id.price + "$" 
-								form(action="/removecartorder/"+val._id method="post")
-									button.btn.btn-warning(type='submit') Delete 
-		form(action="/delivery")
-							button.btn.btn-warning(type='submit') Proceed to delivery
+		
+
+
+
+
 		script(type="text/javascript", src="/vendor/jquery/dist/jquery.js")
 		script( type="text/javascript" src="/vendor/pickadate/lib/picker.js")
 		script( type="text/javascript" src="/vendor/pickadate/lib/picker.date.js")
