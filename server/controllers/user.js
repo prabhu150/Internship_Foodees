@@ -62,8 +62,8 @@ exports.getSignOut = function(req,res, next){
 }
 
 exports.getDashBoard = function(req,res){
-   
-  User.find({_id:req.user.id},function(err,users)
+    
+    User.find({_id:req.user.id},function(err,users)
 {
 if(err)
   console.log(err);
@@ -71,11 +71,7 @@ else
   Order.find({u_id:req.user.id},function(err,orders)
 {
   res.render('dashboard',{users:users,orders:orders});
-}
-
-  );
-   
-
- } );
+});
+   } );
 
 }

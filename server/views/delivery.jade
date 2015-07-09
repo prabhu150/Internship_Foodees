@@ -1,6 +1,7 @@
 extends ./includes/layout
 block main
 
+	script(type="text/javascript" , src="js/pinvalidate.js")
 	h1 Please enter your delivery details
 
 	.container-fluid
@@ -12,14 +13,28 @@ block main
 						input.form-control(type='text', placeholder= '#{user.profile.name}', readonly='')
 						p Address
 						input.form-control(type='text' placeholder='Flat/House no.' name="line1")
+						#flatmsg
 						input.form-control(type='text' placeholder='Name of building' name="line2")
+						#bdgmsg
 						input.form-control(type='text' placeholder='Road' name="line3")
+						#roadmsg
 						input.form-control(type='text' placeholder='Landmark' name="line4")
+						#landmsg
 						input.form-control(type='text' placeholder='Area' name="line5")
+						#areamsg
 						input.form-control(type='text' placeholder='City' name="line6")
+						#citymsg
 						input.form-control(type='text', maxlength='6', placeholder='Enter your Pincode', name='line7')
-						.msg 
-						button.btn.btn-warning(type='button' onmouseover="pinvalidate()") Check
-						form(action="/delivery" method="post")
-							button.btn.btn-warning(type='submit') Send my Dabba
-	script(type="text/javascript" , src="js/pinvalidate.js")
+						#msg
+
+						input.form-control.sr-only(type='time', placeholder='Enter your Pincode', id='time')
+						#timemsg 
+						
+
+
+						button.btn.btn-warning(type='button'  onclick="pinvalidate()") Check 
+						button.btn.btn-warning.disabled(type='button' id="onehour" ) One Hour Delivery 
+
+						form(action="/delivery" method="post" )
+							button.btn.btn-warning.disabled(type='submit' id="senddabba") Send my Dabba
+						

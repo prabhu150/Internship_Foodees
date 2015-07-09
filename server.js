@@ -48,6 +48,8 @@ app.use(bodyParser.urlencoded({extended:true}));//URL encoding
 
 
 
+
+
 //Mongoose Connection with MongoDB
 mongoose.connect('mongodb://localhost/foodees');
 console.log('local mongodb opened');
@@ -103,10 +105,6 @@ app.post('/contactus', contactUs.postContactUs);
 // var id = req.params.id //getting id
 // var outPutFromDBFile =__dirname+"/public/FromDB_"+id+".png";
 
-
-// }
-
-//   );
 
 
 

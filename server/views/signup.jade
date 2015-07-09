@@ -7,20 +7,28 @@ block main
 				include ../views/partials/logo
 				h2.titles SIGN UP
 				.form-group
-					form(action='/signup' method='post' name="form")
-						input.form-control(type='text' placeholder='Name' name="name")
-						input.form-control(type='email' placeholder='Email' name="email")
-						input.form-control(type='password' placeholder='Password' name="password")
-						input.form-control(type='password' placeholder='Confirm Password' name="password1")
+					form(action='/signup' ,method='post', name="form")
+						input.form-control(type='text', placeholder='Name', name="name")
+						#namemsg
+						input.form-control(type='email' ,placeholder='Email', name="email")
+						#emailmsg
+						input.form-control(type='text', placeholder='Password' ,name="password")
+						
+						input.form-control(type='text' ,placeholder='Confirm Password', name="password1")
+						
 						input(type='radio', name='sex', value='male')
 						| Male &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 						input(type='radio', name='sex', value='female')
 						| Female
+						#sexmsg
 						br
 						input(type='checkbox', name='agree')
+						
 						| I agree to the  
 						a( data-toggle='modal', data-target='#myModal')
 							| Terms and Conditions
+							#termmsg
+						
 						#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
 							.modal-dialog(role='document')
 								.modal-content
@@ -34,8 +42,10 @@ block main
 									.modal-footer
 										button.btn.btn-default(type='button', data-dismiss='modal') Close
 						br
-						button.btn.btn-primary(type='submit' id='onSubmit' data-loading-text="Validating..." autocomplete="off" onmouseover="validate()") Signup
+						
+						button.btn.btn-primary.disabled(type='submit' id='onsubmit'  onmouseover="validate()") Signup
 
 									
 	script(type="text/javascript" src="js/formvalidate.js")
 
+						

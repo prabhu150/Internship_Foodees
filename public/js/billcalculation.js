@@ -1,4 +1,4 @@
-var $inputtime = $( '.timepicker' ).pickatime({
+  var $inputtime = $( '.timepicker' ).pickatime({
             container: '#time',
             interval: 60,
           disable: [3, 5, 7],  

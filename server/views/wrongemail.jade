@@ -4,9 +4,10 @@ block main
     .row
       .col-md-4.col-md-offset-4.text-center#index
         include ../views/partials/logo
-        .alert.alert-danger(role='alert') Incorrect Email ID and/or Password!
+        .alert.alert-danger(role='alert')  Incorrect Email ID and/or Password!
           button.close(type='button', data-dismiss='alert', aria-label='Close')
-            span(aria-hidden='true') X    
+            i.fa.fa-times
+              
         form(action="/signin" method="post")
           .form-group
             input.form-control(type='email', placeholder='Email', name="email")

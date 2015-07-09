@@ -90,7 +90,7 @@ passport.use(new FacebookStrategy(facebook, function(req, accessToken, refreshTo
           user.tokens.push({ kind: 'facebook', accessToken: accessToken });
           user.profile.name = profile.displayName;
           user.profile.gender = profile._json.gender;
-          user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=small';
+          user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
           user.profile.location = (profile._json.location) ? profile._json.location.name : '';
           user.save(function(err) {
             done(err, user);

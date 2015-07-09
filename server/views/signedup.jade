@@ -6,7 +6,7 @@ block main
         include ../views/partials/logo
         .alert.alert-success(role='alert') Signed Up Successfully
           button.close(type='button', data-dismiss='alert', aria-label='Close')
-            span(aria-hidden='true') ×
+            i.fa.fa-times  
 
         form(action="/signin" method="post")
           .form-group

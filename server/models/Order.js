@@ -3,7 +3,6 @@ var User = require('./User');
 var Menu = require('./Menu');
 //A mongoose Schema
 var orderSchema = new mongoose.Schema({
-
  
     u_id:{type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 	m_id:{type: mongoose.Schema.Types.ObjectId, ref: 'Menu'},
