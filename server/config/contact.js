@@ -25,12 +25,12 @@ exports.postContactUs = function (req, res) {
   smtpTrans.sendMail(mailOpts, function (error, response) {
       //Email not sent
       if (error) {
-          res.render('contact-us', { title: 'Contact Us', msg: 'Error occured, message not sent.', err: true, page: 'contact' });
+          res.render('contact-us', { title: 'Contact Us', msg: 'Error occured, letter not sent.', err: true, page: 'contact' });
           console.log(error);
       }
       //Yay!! Email sent
       else {
-          res.render('contact-us', { title: 'Contact Us', msg: 'Message sent! Thank you.', err: false, page: 'contact' });
+          res.render('contact-us', { title: 'Contact Us', msg: 'Letter sent! Thank you.', err: false, page: 'contact' });
           console.log('sent');
       }
   });
