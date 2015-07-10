@@ -1,7 +1,7 @@
 
 function validate()
 {
-alert("reached jq");
+// alert("reached jq");
 var fname=document.forms["form"]["name"].value;
 var patf=/^[a-z A-Z]{6,20}$/;
 var email=document.forms["form"]["email"].value;

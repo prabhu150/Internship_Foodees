@@ -1,55 +1,41 @@
 extends ./includes/layout
 block main
-	body
-	.container-fluid.signup-bg
-		.row
-			.col-md-4.col-md-offset-4.text-center#signup
-				include ../views/partials/logo
-				h2.titles SIGN UP
-				.form-group
-					form#uploadForm(name="form" enctype='multipart/form-data', action='/signup', method='post')
-						input(type='file', name='userPhoto')
-					
-					
+	form.sign-up.text-center#uploadForm(name="form", action='/signup', method='post')
+		h1.sign-up-title Sign up for free
+		input.sign-up-input(type='text', placeholder="What's your name?", name='name', autofocus='')
+		#namemsg
+		input.sign-up-input(type='email', placeholder="Email", name='email')
+		#emailmsg
+		input.sign-up-input(type='password', placeholder='Choose a password', name='password')
+		input.sign-up-input(type='password', placeholder='Re-enter your password', name='password1')
+		input(type='radio', name='sex', value='male')
+		| Male &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		input(type='radio', name='sex', value='female')
+		| Female
+		#sexmsg
+		input(type='file', name='userPhoto')
+		input#checkbox(type='checkbox', name='agree')
+		| I agree to the  
+		br
+		a( data-toggle='modal', data-target='#myModal')
+			| Terms and Conditions
+			#termmsg
+		
+		#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+			.modal-dialog(role='document')
+				.modal-content.text-center
+					.modal-header
+						button.close(type='button', data-dismiss='modal', aria-label='Close')
+							span(aria-hidden='true') X
+						h3#myModalLabel.modal-title Terms and Conditions
+					.modal-body
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi beatae atque veniam illum, ex amet omnis quae, vitae, similique quasi dolor itaque eum, vel incidunt minima? Amet debitis aliquid, similique!
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolor ipsam dicta odit, voluptate aspernatur sed minima, deleniti debitis repellat a? Ad reiciendis accusantium doloribus natus repudiandae sequi, doloremque illo.
+					.modal-footer
+						h4 -foodees
 
-						input.form-control(type='text', placeholder='Name', name="name")
-						#namemsg
-						input.form-control(type='email' ,placeholder='Email', name="email")
-						#emailmsg
-						input.form-control(type='text', placeholder='Password' ,name="password")
-						
-						input.form-control(type='text' ,placeholder='Confirm Password', name="password1")
-						
-						input(type='radio', name='sex', value='male')
-						| Male &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-						input(type='radio', name='sex', value='female')
-						| Female
-						#sexmsg
-						br
-						input(type='checkbox', name='agree')
-						
-						| I agree to the  
-						a( data-toggle='modal', data-target='#myModal')
-							| Terms and Conditions
-							#termmsg
-						
-						#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
-							.modal-dialog(role='document')
-								.modal-content
-									.modal-header
-										button.close(type='button', data-dismiss='modal', aria-label='Close')
-											span(aria-hidden='true') ×
-										h3#myModalLabel.modal-title Terms and Conditions
-									.modal-body
-									p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi beatae atque veniam illum, ex amet omnis quae, vitae, similique quasi dolor itaque eum, vel incidunt minima? Amet debitis aliquid, similique!
-									p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolor ipsam dicta odit, voluptate aspernatur sed minima, deleniti debitis repellat a? Ad reiciendis accusantium doloribus natus repudiandae sequi, doloremque illo.
-									.modal-footer
-										button.btn.btn-default(type='button', data-dismiss='modal') Close
-						br
-						
-						button.btn.btn-primary.disabled(type='submit' id='onsubmit'  onmouseover="validate()") Signup
+		input.sign-up-button(type='submit', value='Sign me up!' id='onsubmit' onmouseover="validate()")
 
-	script(type="text/javascript",src="vendor/pace/pace.js")								
 	script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
 	script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js')
 	script(type="text/javascript" src="js/formvalidate.js")
