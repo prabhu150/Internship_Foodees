@@ -21,7 +21,8 @@ exports.getSignUp = function(req,res){
 
 exports.postSignUp = function(req,res){
         var user = new User({profile:{name:req.body.name, gender:req.body.sex}, email:req.body.email, password:req.body.password, agreed:req.body.agree})
-        user.save();
+        //user.save(); 
+        console.log(req.files);
         User.find(function(err, users){
           res.render('signedup',{title:'Home'});
         });

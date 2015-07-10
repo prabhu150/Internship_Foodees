@@ -1,7 +1,7 @@
 
 function validate()
 {
-
+alert("reached jq");
 var fname=document.forms["form"]["name"].value;
 var patf=/^[a-z A-Z]{6,20}$/;
 var email=document.forms["form"]["email"].value;
@@ -73,7 +73,7 @@ $("#termmsg").text("You have to agree!\n");
 }
 if(msg=='')
 	$("#onsubmit").removeClass("disabled");
-
 }
+
 
 

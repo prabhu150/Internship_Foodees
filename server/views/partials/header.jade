@@ -44,8 +44,12 @@ if user
       ul.dropdown-menu
         li
           img.img-circle.dropdown-profile-pic(src='#{user.profile.picture}')
+        li.divider(role='separator')
         li.text-center
           a(href='/dashboard') My Profile 
-        li.divider(role='separator')
+        if (user.type=="admin")
+        li.text-center
+          a(href='/setdefaultmenu') Set-Up Default Menu 
+        
         li.text-center
           a(href='/signout') Logout
