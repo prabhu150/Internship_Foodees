@@ -1,31 +1,64 @@
 extends ./includes/layout
 block main
-  .container-fluid.cover-bg
-    .row
-      .col-md-4.col-md-offset-4.text-center#index
-        include ../views/partials/logo
-          
-        form(action="/signin" method="post")
-          .form-group
-            input.form-control(type='email', placeholder='Email', name="email")
-            input.form-control(type='password', placeholder='Password', name="password")
-            button.btn.btn-default(type='submit', name="signin") Signin
-            |&nbsp &nbsp &nbsp
-            a.btn.btn-default(href='/signup') Signup
-            .option
-              span
-              |&nbsp OR &nbsp
-              span
-            a.col-md-6.col-md-offset-3.btn.btn-primary(href='/auth/facebook') 
+  .wrapper
+      .container
+          h1 Welcome
+          form.form.text-center(action="/signin" method="post")
+            input(type='email', placeholder='Email', name='email')
+            input(type='password', placeholder='Password', name='password')
+            button#login-button(type='submit') Login
+            br
+            a.btn(href='/signup')#signup Signup
+            h4 OR
+            a.col-md-4.col-md-offset-4.btn.btn(href='/auth/facebook')#fb 
               .login-icon
                 i.fa.fa-facebook 
                 |&nbspLogin with Facebook
             br
-            a.col-md-6.col-md-offset-3.btn.btn-danger(href='/auth/google') 
+            br
+            a.col-md-4.col-md-offset-4.btn(href='/auth/google')#gp 
               .login-icon
                 i.fa.fa-google-plus 
                 |&nbspLogin with Google+
-    include ../views/partials/footer
+        ul.bg-bubbles
+          li
+          li
+          li
+          li
+          li
+          li
+          li
+          li
+          li
+          li
+
+
+  //- .container-fluid.cover-bg
+  //-   .row
+  //-     .col-md-4.col-md-offset-4.text-center#index
+  //-       include ../views/partials/logo
+          
+  //-       form(action="/signin" method="post")
+  //-         .form-group
+  //-           input.form-control(type='email', placeholder='Email', name="email")
+  //-           input.form-control(type='password', placeholder='Password', name="password")
+  //-           button.btn.btn-default(type='submit', name="signin") Signin
+  //-           |&nbsp &nbsp &nbsp
+  //-           a.btn.btn-default(href='/signup') Signup
+  //-           .option
+  //-             span
+  //-             |&nbsp OR &nbsp
+  //-             span
+  //-           a.col-md-6.col-md-offset-3.btn.btn-primary(href='/auth/facebook') 
+  //-             .login-icon
+  //-               i.fa.fa-facebook 
+  //-               |&nbspLogin with Facebook
+  //-           br
+  //-           a.col-md-6.col-md-offset-3.btn.btn-danger(href='/auth/google') 
+  //-             .login-icon
+  //-               i.fa.fa-google-plus 
+  //-               |&nbspLogin with Google+
+  //-   include ../views/partials/footer
 
 
 
