@@ -1,10 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100);
 
-html, body {
-  height: 100%;
-  background: #122121;
-}
-
 .anview-logo {
   font-family: 'lato', sans-serif;
   width: 256px;
@@ -81,9 +76,9 @@ html, body {
   }
   
   span:nth-child(3) {
-    left: 13px;
+    left: 8px;
     animation: a 5s ease;
-    transform: translateX(0px);
+    transform: translateX(15px);
   }
   
   @keyframes a {
@@ -119,7 +114,7 @@ html, body {
   }
   
   span:nth-child(5) {
-    left: 30px;
+    left: 57px;
     opacity: 0;
     animation: ice 5s ease;
   }
@@ -140,20 +135,20 @@ html, body {
   }
   
   span:nth-child(6) {
-    left: 102px;
+    left: 145px;
     animation: view 5s ease;
     transform: translateX(0px);
   }
   @keyframes view {
     from {
       opacity: 0;
-      transform: translateX(60px);
+      transform: translateX(110px);
     }
     40% {
       opacity: 1;
     }
     70% {
-      transform: translateX(60px);
+      transform: translateX(110px);
     }
   }
 }
@@ -178,7 +173,7 @@ html, body {
   }
   
   img {
-    height: 282px;
+    height: 182px;
     position:absolute;
   }
   
