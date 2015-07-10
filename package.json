@@ -40,6 +40,7 @@
     "passport-facebook": "^2.0.0",
     "passport-google-oauth": "^0.2.0",
     "passport-google-plus": "^0.5.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "multer": "~0.1.6"
   }
 }

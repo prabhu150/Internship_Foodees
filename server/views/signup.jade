@@ -7,7 +7,11 @@ block main
 				include ../views/partials/logo
 				h2.titles SIGN UP
 				.form-group
-					form(action='/signup' ,method='post', name="form")
+					form#uploadForm(name="form" enctype='multipart/form-data', action='/signup', method='post')
+						input(type='file', name='userPhoto')
+					
+					
+
 						input.form-control(type='text', placeholder='Name', name="name")
 						#namemsg
 						input.form-control(type='email' ,placeholder='Email', name="email")
@@ -46,6 +50,7 @@ block main
 						button.btn.btn-primary.disabled(type='submit' id='onsubmit'  onmouseover="validate()") Signup
 
 	script(type="text/javascript",src="vendor/pace/pace.js")								
+	script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
+	script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js')
 	script(type="text/javascript" src="js/formvalidate.js")
-
-						
+	script(type="text/javascript" src="js/imageupload.js")

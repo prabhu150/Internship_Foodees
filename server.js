@@ -20,6 +20,9 @@ var menuController = require('./server/controllers/menu');
 var orderController = require('./server/controllers/order');
 
 var app =express();
+var multer     =       require('multer');
+var done       =       false;
+
 
 app.set('views', __dirname + '/server/views');
 app.set('view engine','jade');
@@ -31,6 +34,27 @@ app.use(session({
   secret: 'Cooking codes with Foodees',
   store: new MongoStore({ url: 'mongodb://localhost/foodees', autoReconnect: true })
 }));
+
+
+app.use(multer({ dest: './uploads/',
+ rename: function (fieldname, filename) {
+    return filename+Date.now();
+  },
+onFileUploadStart: function (file) {
+  console.log(file.originalname + ' is starting ...')
+},
+onFileUploadComplete: function (file) {
+  console.log(file.fieldname + ' uploaded to  ' + file.path)
+  done=true;
+}
+}));
+
+// app.post('/api/photo',function(req,res){
+//   if(done==true){
+//     console.log(req.files);
+//     res.end("File uploaded.");
+//   }
+// });
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -68,7 +92,7 @@ app.get('/allorders', orderController.getAllOrders);
 app.get('/delivery', orderController.getDelivery);
 app.get('/contactus', contactUs.getContactUs);
 app.get('/updatelocation', orderController.getUpdateLocation);
-
+app.get('/setdefaultmenu',menuController.setupDefaultMenu);
 
 //POST ROUTES
 app.post('/editmenu', menuController.postEditMenu);

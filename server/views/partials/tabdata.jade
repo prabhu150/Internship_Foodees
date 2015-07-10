@@ -195,6 +195,9 @@
 											
 .container
 	.row
-		if (user)
+		if (user.type=="Customer")
 			form(action="/allorders" method='get')
 				button.btn.btn-warning(type='submit') View Order 
+		if (user.type=="admin")
+			a.button.btn.btn-warning(href="/editmenu") Add Item 
+			a.btn.btn-warning(href="/setdefaultmenu") Reset To Default

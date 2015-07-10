@@ -17,7 +17,8 @@ var userSchema = new mongoose.Schema({
     gender: { type: String, default: '' },
     location: {type: String, default: ''},
     picture: { type: String, default: 'http://transmedia.trinity.edu/~amille10/minisite3/facebookpicture.jpg' },
-    time: { type: String, default: (new Date()).getFullYear() }, 
+    // upicture:{type:File },
+    time: { type: String, default: (new Date()).getDate()+'/'+((new Date()).getDate()+1 ) + '/' + (new Date()).getFullYear()}, 
 },
 
 
