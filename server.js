@@ -20,8 +20,10 @@ var menuController = require('./server/controllers/menu');
 var orderController = require('./server/controllers/order');
 
 var app =express();
-// var multer     =       require('multer');
-var done       =       false;
+
+var multer = require('multer');
+var done = false;
+
 
 
 app.set('views', __dirname + '/server/views');
