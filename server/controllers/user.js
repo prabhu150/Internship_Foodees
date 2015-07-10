@@ -3,6 +3,10 @@ var Menu = require('../models/Menu');
 var User = require('../models/User');
 var Order = require('../models/Order');
 
+exports.getWelcome =  function(req,res){
+            res.render('welcome', {title:'Welcome'});
+}
+
 exports.getIndex =  function(req,res){
             res.render('index', {title:'Home'});
 }

@@ -6,6 +6,11 @@
           i#icon.fa.fa-home
           span.text
             a(href='/') Foodees
+        if (!user)
+          li
+            i#icon.fa.fa-sign-in
+            span.text
+              a(href='/index') Signin
         li
           i#icon.fa.fa-users
           span.text

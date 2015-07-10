@@ -77,7 +77,8 @@ console.log('local mongodb opened');
 
 //Routes
 // GET ROUTES
-app.get('/', userController.getIndex);
+app.get('/', userController.getWelcome);
+app.get('/index', userController.getIndex);
 app.get('/about', userController.getAbout);
 app.get('/menu', menuController.getMenu);
 app.get('/working', userController.getWorking);
