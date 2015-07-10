@@ -1,3 +1,20 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300);
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+$base-font-size: 2em;
+$base-line-height: 1.41667em;
+$font-color: rgba(255, 233, 211, 1);
+$main-color: rgba(83, 170, 179, 1);
+$pink-accent-color: rgba(234, 53, 86, 1);
+$blue-accent-color: rgba(97, 210, 214, 1);
+$background-color: #46cbda; //blue
+$component-color: #e31b23; //red
+$hover-color: #c11f2b; //dark-red
+$pane-color: rgba(255, 255, 255, 1);
+$serif-font: "Merriweather", serif;
+$sans-font: "Open Sans", sans-serif;
+
 @import '_header';
 @import '_image';
 @import '_icon';
@@ -10,15 +27,7 @@
 @import '_footer';
 @import '_aboutus';
 @import '_working';
+@import '_contact';
 
-@font-face { font-family: Topper ; src: url('fonts/Topper.ttf'); } 
-@font-face { font-family: Little ; src: url('fonts/Little.ttf'); } 
-@font-face { font-family: Angilla ; src: url('fonts/Angilla.ttf'); } 
-@font-face { font-family: War ; src: url('fonts/War.ttf'); } 
-@font-face { font-family: egory ; src: url('fonts/egory.ttf'); } 
-@font-face { font-family: Germanica1 ; src: url('fonts/Germanica1.ttf'); } 
-@font-face { font-family: Germanica2 ; src: url('fonts/Germanica2.ttf'); } 
-@font-face { font-family: Germanica3 ; src: url('fonts/Germanica3.ttf'); } 
-@font-face { font-family: Germanica4 ; src: url('fonts/Germanica4.ttf'); } 
-@font-face { font-family: Gotham ; src: url('fonts/Gotham.ttf'); } 
+
 @font-face { font-family: oran ; src: url('/fonts/orange juice 2.0.ttf'); } 

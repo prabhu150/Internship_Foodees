@@ -20,24 +20,24 @@ body{
 }
 
 #nav-content{
-  background-color: #e31b23;
+  background-color: $component-color;
   padding-top: 30px;
   height: 1000px;
 }
 
 #nav li{
   list-style: none;
-  background-color: #e31b23;
+  background-color: $component-color;
   width: 400px;
   height: 56px;
   position: relative;
   right: 40px;
-  border-bottom: 1px solid #c11f2b;
+  border-bottom: 1px solid $hover-color;
   font-size: 25px;
 }
 
 #nav li:hover{
-  background-color: #c11f2b; 
+  background-color: $hover-color; 
 }
 
 #nav:hover{

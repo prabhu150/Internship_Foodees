@@ -1,0 +1,94 @@
+body {
+  background-color: $background-color;
+  font-family: $serif-font;
+  color: $component-color;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: 300;
+}
+
+textarea, input, button {
+  font-family: $sans-font;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.contact-us {
+  position: relative;
+  width: 760px;
+  margin: 50px auto;
+  padding: 1em 1em;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom: 15px solid $component-color;
+}
+
+.signature {
+  padding-left: 300px;
+}
+
+fieldset {
+  border: none;
+  padding: 1em;
+
+  legend{
+    border: none;
+    color: $component-color;
+  }
+
+  button 
+  {
+    position: absolute;
+    top: 0;
+    right: 2em;
+    display: block;
+    margin: 1.4em auto;
+    width: 200px;
+    height: 40px;
+    border: none;
+    background-color: $blue-accent-color;
+    color: $pane-color;
+    font-size: 0.6em;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  input {
+    margin-left: 1em;
+    display: block;
+    border: none;
+    width: 375px;
+    font-size: 0.8em;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  textarea {
+    width: 100%;
+    border: none;
+    font-size: 0.8em;
+    line-height: $base-line-height;
+  }
+
+  textarea:focus {
+    outline: none;
+  }
+}
+
+
+::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+}
+
+::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
