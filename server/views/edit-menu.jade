@@ -2,22 +2,30 @@ extends ./includes/layout
 block main
 	#wrapper
 		#form
-			h1 Fantastic Form
 			fielset#signup
-				legend - Sign Up -
-				.input-box
-					label.fill_(for="name") Name
-					input(type="text", name="name")
-				.input-box
-					label.fill_(for="email") Email
-					input(type="email", name="email")
-				.input-box
-					label.fill_(for="password") Password
-					input(type="password", name="password")
-				.input-box
-					label.fill_(for="again") Again
-					input(type="password", name="again")
-				a.fill_.button(href="#") Send Form
+				legend - New Item -
+				form(action='/editmenu' method='post')
+					.input-box
+						label.fill_(for="itemName") Item Name
+						input(type="text", name="itemName")
+					.input-box
+						label.fill_(for="description") Description
+						input(type="text", name="description")
+					.input-box
+						label.fill_(for="price") Price
+						input(type="number", name="price")
+					|Type
+					select.form-control(name='type')
+						option Rice
+						option Gravy
+						option Rotis
+						option Juices
+						
+					|Category
+					select.form-control(name='category')
+						option Veg.
+						option Non-veg.
+					button.fill_.button(type='submit' onmouseover="valid()") Add to Menu
 
 
 	//- .container-fluid.editmenu-bg

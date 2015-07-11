@@ -20,7 +20,7 @@ body {
   background: $component-color;
   color: white;
   text-align: left;
-  padding: 17.5px 0 2.5px 6px;
+  padding: 10px 0 10px 6px;
   width: 70px;
   text-shadow: 0 1px 2px rgba(255, 99, 71, 0.15);
   font-size: 11px;
@@ -38,6 +38,7 @@ body {
   border-right: 16px solid transparent;
   image-rendering: pixelated;
 }
+
 #wrapper {
   display: flex;
   justify-content: center;
@@ -46,16 +47,10 @@ body {
   width: 600px;
   text-align: center;
 }
-#wrapper #form h1 {
-  display: block;
-  font-size: 32px;
-  color: $pane-color;
-  text-shadow: 0 2px 0 $hover-color;
-  margin: 32px 0 42px ;
-}
+
 #wrapper #form fielset {
   position: relative;
-  margin: 0 auto;
+  margin: 10% auto;
   margin-bottom: 32px;
   display: block;
   background: white;
@@ -66,6 +61,7 @@ body {
   padding: 15px;
   text-align: left;
 }
+
 #wrapper #form fielset legend {
   display: block;
   color: $hover-color;
@@ -88,7 +84,7 @@ body {
 #wrapper #form fielset .input-box input[type="password"] {
   letter-spacing: 2px;
 }
-#wrapper #form fielset a.button {
+#wrapper #form fielset button.button {
   display: inline-block;
   position: relative;
   margin: 15px 0 0 -15px;
