@@ -32,10 +32,11 @@
   
   span:nth-child(1) {
     font-size: 32px;
+    font-weight: bold;
     width: inherit;
     text-align: center;
     margin-top: -55px;
-    color: rgba(255,255,255,.6);
+    color: rgba(239, 0, 255,.6);
     animation: weare 5s ease;
   }
   
@@ -55,11 +56,12 @@
   
   span:nth-child(2) {
     font-size: 28px;
+    font-weight: bold;
     width: inherit;
     text-align: center;
     opacity: 0;
     margin-top: -55px;
-    color: rgba(255,255,255,.6);
+    color: rgba(239, 0, 255,.6);
     animation: weprovide 5s ease;
   }
   
