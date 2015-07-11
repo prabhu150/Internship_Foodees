@@ -13,7 +13,7 @@ block main
 						input(type="text", name="description")
 					.input-box
 						label.fill_(for="price") Price
-						input(type="number", name="price")
+						input(type="number", name='price')
 					|Type
 					select.form-control(name='type')
 						option Rice
@@ -27,26 +27,4 @@ block main
 						option Non-veg.
 					button.fill_.button(type='submit' onmouseover="valid()") Add to Menu
 
-
-	//- .container-fluid.editmenu-bg
-	//- 	.row
-	//- 		.col-md-4.col-md-offset-2#editmenu
-	//- 			form(action='/editmenu' method='post')
-	//- 				input.form-control(type='text' placeholder='Item Name' name="itemName")
-	//- 				input.form-control(type='textearea' rows='3' placeholder='Description' name="description")
-	//- 				.input-group
-	//- 					.input-group-addon ₹
-	//- 					input.form-control(type='number' name="price")
-	//- 				|Type
-	//- 				select.form-control(name='type')
-	//- 					option Rice
-	//- 					option Gravy
-	//- 					option Rotis
-	//- 					option Juices
-						
-	//- 				|Category
-	//- 				select.form-control(name='category')
-	//- 					option Veg.
-	//- 					option Non-veg.
-	//- 				button.btn.btn-default(type='submit' onmouseover="valid()") Add to Menu
 	script(type="text/javascript",src="js/formvalidate.js")

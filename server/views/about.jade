@@ -1,101 +1,164 @@
 extends ./includes/layout
 block main
-	br
-	br
-	br
-	script(type="text/javascript",src="vendor/pace/pace.js")
-	.container-fluid
-		.row
-			#carousel-example-generic.carousel.slide(data-ride='carousel').slides
-				ol.carousel-indicators
-					li.active(data-target='#carousel-example-generic', data-slide-to='0')
-					li(data-target='#carousel-example-generic', data-slide-to='1')
-					li(data-target='#carousel-example-generic', data-slide-to='2')
-					li(data-target='#carousel-example-generic', data-slide-to='3')
-					li(data-target='#carousel-example-generic', data-slide-to='4')
-					li(data-target='#carousel-example-generic', data-slide-to='5')
-					
-				.carousel-inner(role='listbox')
-					.item.active
-						img(src='images/cover.jpg', alt='...')
-						.carousel-caption
-					.item
-						img(src='images/cover2.jpg', alt='...')
-						.carousel-caption
-					.item
-						img(src='images/cover3.jpg', alt='...')
-						.carousel-caption
-					.item
-						img(src='images/cover4.jpg', alt='...')
-						.carousel-caption
-					.item
-						img(src='images/dabba.jpg', alt='...')
-						.carousel-caption
-					.item
-						img(src='images/dabba2.JPG', alt='...')
-						.carousel-caption
-				a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
-					span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
-					span.sr-only Previous
-				a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
-					span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
-					span.sr-only Next
-	.container
-		.row
-			.col-md-3.col-md-offset-1.boxes
-				h4 The Concept
-				p Are you tired of eating baingan/ lauki everyday? Is your diet dictated by your dabbawala?Yummy Tiffins offers you
-				ol(type='1' ).custom-counter
-					li Choice of deciding your own personalized menu
-					li Food packed in disposable containers.
-					li Delivery through world famous dabbawalas of Mumbai.
-				button.btn.btn-default.center-block(data-toggle='modal', data-target='#myModal')
-					| Read More
-				#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
-					.modal-dialog(role='document')
-						.modal-content
-							.modal-header
-								button.close(type='button', data-dismiss='modal', aria-label='Close')
-									span(aria-hidden='true') ×
-								h3#myModalLabel.modal-title The Concept
-							.modal-body
-							p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi beatae atque veniam illum, ex amet omnis quae, vitae, similique quasi dolor itaque eum, vel incidunt minima? Amet debitis aliquid, similique!
-							p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolor ipsam dicta odit, voluptate aspernatur sed minima, deleniti debitis repellat a? Ad reiciendis accusantium doloribus natus repudiandae sequi, doloremque illo.
-							.modal-footer
-								button.btn.btn-default(type='button', data-dismiss='modal') Close		
+	.full-wrap
+		.menuwrap
+			.menu
+				#set1.set
+					.head Yummy
+					.desc Health with Taste
+					i.fa.fa-heart.ico
+				#set2.set
+					.head Variety
+					.desc Countless options
+					i.fa.fa-list-ul.ico
+				#set3.set
+					.head Happiness
+					.desc Pocket-friendly Billing
+					i.fa.fa-smile-o.ico
+				#set4.set
+					.head Fast
+					.desc Delivered On Time
+					i.fa.fa-rocket.ico
+		.panel
+			.panel-body
+				span
+					i.icon-remove
+					|Close
+				#page1.page
+					h1 Peace
+					p
+					| How far I fell before I regained control of the plane I do not know, but I must have been very close to the ground when I started to rise again, as I plainly heard the squealing of animals below me.  Rising again I scanned the heavens for my pursuers, and finally making out their lights far behind me, saw that they were landing, evidently in search of me.
+					p
+					| Not until their lights were no longer discernible did I venture to flash my little lamp upon my compass, and then I found to my consternation that a fragment of the projectile had utterly destroyed my only guide, as well as my speedometer.  It was true I could follow the stars in the general direction of Helium, but without knowing the exact location of the city or the speed at which I was traveling my chances for finding it were slim.
+					p
+					| Helium lies a thousand miles southwest of Zodanga, and with my compass intact I should have made the trip, barring accidents, in between four and five hours.  As it turned out, however, morning found me speeding over a vast expanse of dead sea bottom after nearly six hours of continuous flight at high speed.  Presently a great city showed below me, but it was not Helium, as that alone of all Barsoomian metropolises consists in two immense circular walled cities about seventy-five miles apart and would have been easily distinguishable from the altitude at which I was flying.
+				#page2.page
+					h1 Serenity
+					p
+					| My respite was short-lived however, for soon the entire party, numbering some thousand men, came charging into view, racing madly toward me.  I fired until my rifle was empty and they were almost upon me, and then a glance showing me that Dejah Thoris and Sola had disappeared among the hills, I sprang up, throwing down my useless gun, and started away in the direction opposite to that taken by Sola and her charge.
+					p
+					| If ever Martians had an exhibition of jumping, it was granted those astonished warriors on that day long years ago, but while it led them away from Dejah Thoris it did not distract their attention from endeavoring to capture me.
+					p
+					| They raced wildly after me until, finally, my foot struck a projecting piece of quartz, and down I went sprawling upon the moss.  As I looked up they were upon me, and although I drew my long-sword in an attempt to sell my life as dearly as possible, it was soon over.  I reeled beneath their blows which fell upon me in perfect torrents; my head swam; all was black, and I went down beneath them to oblivion.
+				#page3.page
+					h1 Happiness
+					p
+					| The nearer moon, hurtling suddenly above the horizon and lighting up the Barsoomian scene, showed me that my preserver was Woola, but from whence he had come, or how found me, I was at a loss to know.  That I was glad of his companionship it is needless to say, but my pleasure at seeing him was tempered by anxiety as to the reason of his leaving Dejah Thoris.  Only her death I felt sure, could account for his absence from her, so faithful I knew him to be to my commands.
+					p
+					| By the light of the now brilliant moons I saw that he was but a shadow of his former self, and as he turned from my caress and commenced greedily to devour the dead carcass at my feet I realized that the poor fellow was more than half starved.  I, myself, was in but little better plight but I could not bring myself to eat the uncooked flesh and I had no means of making a fire.  When Woola had finished his meal I again took up my weary and seemingly endless wandering in quest of the elusive waterway.
+					p
+					| At daybreak of the fifteenth day of my search I was overjoyed to see the high trees that denoted the object of my search.  About noon I dragged myself wearily to the portals of a huge building which covered perhaps four square miles and towered two hundred feet in the air.  It showed no aperture in the mighty walls other than the tiny door at which I sank exhausted, nor was there any sign of life about it.
+				#page4.page
+					h1 Eternity
+					p
+					| The vessels carrying our green warriors were kept circling above the contending fleets of Helium and Zodanga, since their batteries were useless in the hands of the Tharks who, having no navy, have no skill in naval gunnery.  Their small-arm fire, however, was most effective, and the final outcome of the engagement was strongly influenced, if not wholly determined, by their presence.
+					p
+					| At first the two forces circled at the same altitude, pouring broadside after broadside into each other.  Presently a great hole was torn in the hull of one of the immense battle craft from the Zodangan camp; with a lurch she turned completely over, the little figures of her crew plunging, turning and twisting toward the ground a thousand feet below; then with sickening velocity she tore after them, almost completely burying herself in the soft loam of the ancient sea bottom.
+					p
+					| A wild cry of exultation arose from the Heliumite squadron, and with redoubled ferocity they fell upon the Zodangan fleet.  By a pretty maneuver two of the vessels of Helium gained a position above their adversaries, from which they poured upon them from their keel bomb batteries a perfect torrent of exploding bombs.
 
-			.col-md-3.col-md-offset-1.boxes
-				h4 Why Us?
-				ol(type='1').custom-counter
-					li Tasty Food
-					li Select your own menu
-					li Disposable containers
-					li Fresh vegetables and spices
-					li No preservatives / artificial color
-					li No pre-cooked gravies
-					li Customized meals start at just Rs 60/-
-				button.btn.btn-default.center-block(data-toggle='modal', data-target='#myModal')
-					| Read More
-				#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
-					.modal-dialog(role='document')
-						.modal-content
-							.modal-header
-								button.close(type='button', data-dismiss='modal', aria-label='Close')
-									span(aria-hidden='true') ×
-								h3#myModalLabel.modal-title Why Us?
-							.modal-body
-							p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi beatae atque veniam illum, ex amet omnis quae, vitae, similique quasi dolor itaque eum, vel incidunt minima? Amet debitis aliquid, similique!
-							p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolor ipsam dicta odit, voluptate aspernatur sed minima, deleniti debitis repellat a? Ad reiciendis accusantium doloribus natus repudiandae sequi, doloremque illo.
-							.modal-footer
-								button.btn.btn-default(type='button', data-dismiss='modal') Close		
+
+
+
+
+
+
+
+	//- br
+	//- br
+	//- br
+	//- .container-fluid
+	//- 	.row
+	//- 		#carousel-example-generic.carousel.slide(data-ride='carousel').slides
+	//- 			ol.carousel-indicators
+	//- 				li.active(data-target='#carousel-example-generic', data-slide-to='0')
+	//- 				li(data-target='#carousel-example-generic', data-slide-to='1')
+	//- 				li(data-target='#carousel-example-generic', data-slide-to='2')
+	//- 				li(data-target='#carousel-example-generic', data-slide-to='3')
+	//- 				li(data-target='#carousel-example-generic', data-slide-to='4')
+	//- 				li(data-target='#carousel-example-generic', data-slide-to='5')
+					
+	//- 			.carousel-inner(role='listbox')
+	//- 				.item.active
+	//- 					img(src='images/cover.jpg', alt='...')
+	//- 					.carousel-caption
+	//- 				.item
+	//- 					img(src='images/cover2.jpg', alt='...')
+	//- 					.carousel-caption
+	//- 				.item
+	//- 					img(src='images/cover3.jpg', alt='...')
+	//- 					.carousel-caption
+	//- 				.item
+	//- 					img(src='images/cover4.jpg', alt='...')
+	//- 					.carousel-caption
+	//- 				.item
+	//- 					img(src='images/dabba.jpg', alt='...')
+	//- 					.carousel-caption
+	//- 				.item
+	//- 					img(src='images/dabba2.JPG', alt='...')
+	//- 					.carousel-caption
+	//- 			a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+	//- 				span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+	//- 				span.sr-only Previous
+	//- 			a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+	//- 				span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+	//- 				span.sr-only Next
+	//- .container
+	//- 	.row
+	//- 		.col-md-3.col-md-offset-1.boxes
+	//- 			h4 The Concept
+	//- 			p Are you tired of eating baingan/ lauki everyday? Is your diet dictated by your dabbawala?Yummy Tiffins offers you
+	//- 			ol(type='1' ).custom-counter
+	//- 				li Choice of deciding your own personalized menu
+	//- 				li Food packed in disposable containers.
+	//- 				li Delivery through world famous dabbawalas of Mumbai.
+	//- 			button.btn.btn-default.center-block(data-toggle='modal', data-target='#myModal')
+	//- 				| Read More
+	//- 			#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+	//- 				.modal-dialog(role='document')
+	//- 					.modal-content
+	//- 						.modal-header
+	//- 							button.close(type='button', data-dismiss='modal', aria-label='Close')
+	//- 								span(aria-hidden='true') ×
+	//- 							h3#myModalLabel.modal-title The Concept
+	//- 						.modal-body
+	//- 						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi beatae atque veniam illum, ex amet omnis quae, vitae, similique quasi dolor itaque eum, vel incidunt minima? Amet debitis aliquid, similique!
+	//- 						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolor ipsam dicta odit, voluptate aspernatur sed minima, deleniti debitis repellat a? Ad reiciendis accusantium doloribus natus repudiandae sequi, doloremque illo.
+	//- 						.modal-footer
+	//- 							button.btn.btn-default(type='button', data-dismiss='modal') Close		
+
+	//- 		.col-md-3.col-md-offset-1.boxes
+	//- 			h4 Why Us?
+	//- 			ol(type='1').custom-counter
+	//- 				li Tasty Food
+	//- 				li Select your own menu
+	//- 				li Disposable containers
+	//- 				li Fresh vegetables and spices
+	//- 				li No preservatives / artificial color
+	//- 				li No pre-cooked gravies
+	//- 				li Customized meals start at just Rs 60/-
+	//- 			button.btn.btn-default.center-block(data-toggle='modal', data-target='#myModal')
+	//- 				| Read More
+	//- 			#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+	//- 				.modal-dialog(role='document')
+	//- 					.modal-content
+	//- 						.modal-header
+	//- 							button.close(type='button', data-dismiss='modal', aria-label='Close')
+	//- 								span(aria-hidden='true') ×
+	//- 							h3#myModalLabel.modal-title Why Us?
+	//- 						.modal-body
+	//- 						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi beatae atque veniam illum, ex amet omnis quae, vitae, similique quasi dolor itaque eum, vel incidunt minima? Amet debitis aliquid, similique!
+	//- 						p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolor ipsam dicta odit, voluptate aspernatur sed minima, deleniti debitis repellat a? Ad reiciendis accusantium doloribus natus repudiandae sequi, doloremque illo.
+	//- 						.modal-footer
+	//- 							button.btn.btn-default(type='button', data-dismiss='modal') Close		
 			
-			.col-md-3.col-md-offset-1.boxes
-				h4 Subscribe To Us
-				form(action='/')#subs
-					input(type='text', name='namesub' placeholder="Enter Name")
-					input(type='text', name='emailsub' placeholder="Enter Email ID")
-					input(type='text', name='phonesub' placeholder="Enter Phone No.")
+	//- 		.col-md-3.col-md-offset-1.boxes
+	//- 			h4 Subscribe To Us
+	//- 			form(action='/')#subs
+	//- 				input(type='text', name='namesub' placeholder="Enter Name")
+	//- 				input(type='text', name='emailsub' placeholder="Enter Email ID")
+	//- 				input(type='text', name='phonesub' placeholder="Enter Phone No.")
 				
-					input(type='submit', value='Submit')
-					input(type='reset', value='Clear')
+	//- 				input(type='submit', value='Submit')
+	//- 				input(type='reset', value='Clear')
 	
