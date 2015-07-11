@@ -2,6 +2,7 @@
 #top
 {
 margin-top:5%;
+margin-bottom:5%;
 }
 #pay
 {
@@ -9,7 +10,7 @@ margin-top:5%;
 }
 #contii
 {
-	  background-color: rgba(240, 173, 78, 0.6);
+  background-color: orangered;
   position: fixed;
   z-index: 5;
   width: 100%;
@@ -19,5 +20,12 @@ margin-top:5%;
 #orders
 {
 	margin-top:10%;
-
+}
+body {
+  background-color: $background-color;
+  font-family: $serif-font;
+  color: $component-color;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-weight: 300;
 }

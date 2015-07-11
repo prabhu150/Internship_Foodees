@@ -1,20 +1,20 @@
 extends ./includes/layout
 block main
-	.boxes.menuitem
+	.menuitem
 		h1 Menu
 		ul.nav.nav-tabs(role='tablist')
 			li.active(role='presentation')
-				a(href='#rice', aria-controls='rice', role='tab', data-toggle='tab') Rice
+				a(href='#rice', aria-controls='rice', role='tab', data-toggle='tab').dish Rice
 			li(role='presentation')
-				a(href='#gravy', aria-controls='gravy', role='tab', data-toggle='tab') Gravy
+				a(href='#gravy', aria-controls='gravy', role='tab', data-toggle='tab').dish Gravy
 			li(role='presentation')
-				a(href='#roti', aria-controls='roti', role='tab', data-toggle='tab') Roti
+				a(href='#roti', aria-controls='roti', role='tab', data-toggle='tab').dish Roti
 			li(role='presentation')
-				a(href='#extra', aria-controls='extra', role='tab', data-toggle='tab') Extra
+				a(href='#extra', aria-controls='extra', role='tab', data-toggle='tab').dish Extra
 			li(role='presentation')
-				a(href='#juices', aria-controls='juices', role='tab', data-toggle='tab') Juices
+				a(href='#juices', aria-controls='juices', role='tab', data-toggle='tab').dish Juices
 			li(role='presentation')
-				a(href='#desserts', aria-controls='desserts', role='tab', data-toggle='tab') Desserts
+				a(href='#desserts', aria-controls='desserts', role='tab', data-toggle='tab').dish Desserts
 		include ../views/partials/tabdata
 		script(type="text/javascript",src="vendor/pace/pace.js")
 	

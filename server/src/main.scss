@@ -32,6 +32,8 @@ $sans-font: "Open Sans", sans-serif;
 @import '_working';
 @import '_contact';
 @import '_updatelocation';
+@import 'myorder';
+@import 'dashboard';
 
 @font-face { font-family: oran ; src: url('/fonts/orange juice 2.0.ttf'); } 
 @font-face { font-family: germanica1 ; src: url('/fonts/Germanica1.ttf'); } 

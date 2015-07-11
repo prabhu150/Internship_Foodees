@@ -25,18 +25,8 @@ block main
 							font  #{user.email}
 						li Type : 
 							font #{user.type}
-				
-					h4 Recent Orders Placed
-					.list-group
-							button.list-group-item(type='button')
-							button.list-group-item(type='button')
-							button.list-group-item(type='button')
-							button.list-group-item(type='button')
-							button.list-group-item(type='button')
-							button.list-group-item(type='button')
-							button.list-group-item(type='button')
-							button.list-group-item(type='button')
-
+						li
+							
 		.container
 			.row.text-center
 				if (user.type=='Customer')
