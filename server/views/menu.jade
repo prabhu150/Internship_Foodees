@@ -1,20 +1,20 @@
 extends ./includes/layout
 block main
-	h1 menu
-	
-	ul.nav.nav-tabs(role='tablist')
-		li.active(role='presentation')
-			a(href='#rice', aria-controls='rice', role='tab', data-toggle='tab') Rice
-		li(role='presentation')
-			a(href='#gravy', aria-controls='gravy', role='tab', data-toggle='tab') Gravy
-		li(role='presentation')
-			a(href='#roti', aria-controls='roti', role='tab', data-toggle='tab') Roti
-		li(role='presentation')
-			a(href='#extra', aria-controls='extra', role='tab', data-toggle='tab') Extra
-		li(role='presentation')
-			a(href='#juices', aria-controls='juices', role='tab', data-toggle='tab') Juices
-		li(role='presentation')
-			a(href='#desserts', aria-controls='desserts', role='tab', data-toggle='tab') Desserts
-	script(type="text/javascript",src="vendor/pace/pace.js")
-	include ../views/partials/tabdata
+	.boxes.menuitem
+		h1 Menu
+		ul.nav.nav-tabs(role='tablist')
+			li.active(role='presentation')
+				a(href='#rice', aria-controls='rice', role='tab', data-toggle='tab') Rice
+			li(role='presentation')
+				a(href='#gravy', aria-controls='gravy', role='tab', data-toggle='tab') Gravy
+			li(role='presentation')
+				a(href='#roti', aria-controls='roti', role='tab', data-toggle='tab') Roti
+			li(role='presentation')
+				a(href='#extra', aria-controls='extra', role='tab', data-toggle='tab') Extra
+			li(role='presentation')
+				a(href='#juices', aria-controls='juices', role='tab', data-toggle='tab') Juices
+			li(role='presentation')
+				a(href='#desserts', aria-controls='desserts', role='tab', data-toggle='tab') Desserts
+		include ../views/partials/tabdata
+		script(type="text/javascript",src="vendor/pace/pace.js")
 	

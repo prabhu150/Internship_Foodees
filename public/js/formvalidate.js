@@ -19,25 +19,53 @@ var r3=pasp.test(pass);
 var r4=emf.test(email);
 
 $("#namemsg").text("");
-$("#pwdmsg").text("");
-$("#pwd1msg").text("");
+$("#pwdmsg1").text("");
+$("#pwdmsg2").text("");
 $("#sexmsg").text("");
 $("#termmsg").text("");
+$('#enteredname').removeClass('wronginput');
+$('#enteredemail').removeClass('wronginput');
+$('#enteredpwd').removeClass('wronginput');
+$('#enteredpwd1').removeClass('wronginput');
+
 
 if(fname=="")
 {
 	msg=msg+"Please enter First Name \n";
 $("#namemsg").text("Please enter First Name\n");
+$('#enteredname').addClass('wronginput');
+$('#namewrong').removeClass('sr-only');
+
 }
 else if(r==false)
 {
 	msg=msg+"First Name must lie between 6 and 20 characters\n";
 $("#namemsg").text("First Name must lie between 6 and 20 characters\n");
+$('#enteredname').addClass('wronginput');
+$('#namewrong').removeClass('sr-only');
+
 }
+else
+{
+	$('#nameright').removeClass('sr-only');
+
+$('#namewrong').addClass('sr-only');
+
+}
+
+
 if(email=="")
 {
 	msg=msg+"Please enter Email \n";
 $("#emailmsg").text("Please enter Email\n");
+$('#enteredemail').addClass('wronginput');
+$('#emailwrong').removeClass('sr-only');
+
+}
+else
+{
+	$('#emailright').removeClass('sr-only');
+$('#emailwrong').addClass('sr-only');
 
 }
 
@@ -46,31 +74,55 @@ $("#emailmsg").text("Please enter Email\n");
 if(pass=="")
 {
 msg=msg+"Please Enter A Password\n";
-//$("#pwdmsg").text("Please Enter A Password\n");
-alert("Please Enter A Password");
+$("#pwdmsg1").text("Please Enter A Password\n");
+$('#enteredpwd').addClass('wronginput');
+$('#passwordwrong').removeClass('sr-only');
+
 }
 else if (r3==false)
 {
 	msg=msg+"Password has at least One Capital and one Numeric value, length at least 6 char\n";
-//$("#pwdmsg").text("Password has at least One Capital and one Numeric value, length at least 6 char\n");
-alert("Password has at least One Capital and one Numeric value, length at least 6 char");
+$("#pwdmsg1").text("Password has at least One Capital and one Numeric value, length at least 6 char\n");
+$('#enteredpwd').addClass('wronginput');
+$('#passwordwrong').removeClass('sr-only');
+
 }
+else
+{
+	$('#passwordright').removeClass('sr-only');
+$('#passwordwrong').addClass('sr-only');
+
+}
+
 if(pass!=pass1)
 {
 	msg=msg+"Passwords Dont Match!\n";
-//$("#pwd1msg").text("Passwords Dont Match!\n");
-alert("Passwords Dont Match!");
+$("#pwdmsg2").text("Passwords Dont Match!\n");
+$('#passwordwrong1').removeClass('sr-only');
+
+$('#enteredpwd1').addClass('wronginput');
 }
+else if (pass == pass1 && pass!='')
+{
+	$('#passwordright1').removeClass('sr-only');
+$('#passwordwrong1').addClass('sr-only');
+
+}
+
 if(!gender)
 	{
 		msg=msg+"Please Enter Gender\n";
 $("#sexmsg").text("Please Enter Gender\n");
+$('#sexwrong').removeClass('sr-only');
+
 }
-if(!term)
+else
 {
-		msg=msg+"You Have to Agree\n";
-$("#termmsg").text("You have to agree!\n");
+	$('#sexright').removeClass('sr-only');
+$('#sexwrong').addClass('sr-only');
+
 }
+
 if(msg=='')
 	$("#onsubmit").removeClass("disabled");
 }

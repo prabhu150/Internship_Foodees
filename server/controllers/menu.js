@@ -268,7 +268,7 @@ exports.setupDefaultMenu =function(req,res)
 	    "category" : "Veg.",
 	},
 	{
-	    "name" : "Nizami Biryani(Lamb/Chicken)",
+	    "name" : "Nizami Biryani",
 	    "description" : "Royal specialty from Hyderabad, long graun Basmati rice cooked with lamb or chicken, in a delicate blend of exotic spicesand toasted nuts and raisins",
 	    "price" : "255",
 	    "type" : "Rice",

@@ -2,24 +2,58 @@ extends ./includes/layout
 block main
 	form.sign-up.text-center#uploadForm(name="form", action='/signup', method='post')
 		h1.sign-up-title Sign up for free
-		input.sign-up-input(type='text', placeholder="What's your name?", name='name', autofocus='')
-		#namemsg
-		input.sign-up-input(type='email', placeholder="Email", name='email')
-		#emailmsg
-		input.sign-up-input(type='password', placeholder='Choose a password', name='password')
-		input.sign-up-input(type='password', placeholder='Re-enter your password', name='password1')
-		input(type='radio', name='sex', value='male')
-		| Male &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-		input(type='radio', name='sex', value='female')
-		| Female
-		#sexmsg
+		.input-group
+			input.sign-up-input(type='text', placeholder="What's your name?", id='enteredname' ,name='name', autofocus='')
+			.input-group-addon.signupicon
+				i.fa.fa-check-circle-o.fa-2x.correcticon.sr-only#nameright
+				i.fa.fa-exclamation-triangle.fa-2x.wrongicon.sr-only#namewrong
+
+
+		#namemsg.message
+		
+		.input-group
+			input.sign-up-input(type='email', placeholder="Email", id='enteredemail' name='email')
+			.input-group-addon.signupicon
+				i.fa.fa-check-circle-o.fa-2x.correcticon.sr-only#emailright
+				i.fa.fa-exclamation-triangle.fa-2x.wrongicon.sr-only#emailwrong
+		#emailmsg.message
+				
+
+		.input-group
+			input.sign-up-input(type='password', placeholder='Choose a password', id='enteredpwd' name='password')
+			.input-group-addon.signupicon
+				i.fa.fa-check-circle-o.fa-2x.correcticon.sr-only#passwordright
+				i.fa.fa-exclamation-triangle.fa-2x.wrongicon.sr-only#passwordwrong
+
+		#pwdmsg1.message
+			
+
+		.input-group
+			input.sign-up-input(type='password', placeholder='Re-enter your password', id='enteredpwd1' name='password1')
+			.input-group-addon.signupicon
+				i.fa.fa-check-circle-o.fa-2x.correcticon.sr-only#passwordright1
+				i.fa.fa-exclamation-triangle.fa-2x.wrongicon.sr-only#passwordwrong1
+		#pwdmsg2.message
+			
+
+
+		.input-group
+			input(type='radio', name='sex', value='male')
+			| Male &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			input(type='radio', name='sex', value='female')
+			| Female
+			.input-group-addon.signupicon
+				i.fa.fa-check-circle-o.fa-2x.correcticon.sr-only#sexright
+				i.fa.fa-exclamation-triangle.fa-2x.wrongicon.sr-only#sexwrong
+
+		#sexmsg.message
 		input(type='file', name='userPhoto')
 		input#checkbox(type='checkbox', name='agree')
 		| I agree to the  
 		br
 		a( data-toggle='modal', data-target='#myModal')
 			| Terms and Conditions
-			#termmsg
+			#termmsg.message
 		
 		#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
 			.modal-dialog(role='document')

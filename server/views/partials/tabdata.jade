@@ -1,14 +1,15 @@
 .tab-content
 	#rice.tab-pane.active(role='tabpanel')
-		.container
-			.row.text-center
+		.boxes.menuitem
+			.row
 					each val in menus
 						if(val.type=="Rice")
 							if(val.category=="Veg.")
-								.col-md-3.jumbotron.veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
+								.col-md-3.col-md-offset-1.col-lg-3.col-lg-offset-1.col-sm-3.col-sm-offset-1.col-xs-3.col-xs-offset-1.jumbotron.veg-block
+									
+									p.dish= val.name
+									//- p.dish= val.description
+									p.dish= '₹'+val.price
 									if (user)
 										if (user.type=="admin")
 											form(action="/deleteitem/"+val._id method="post")
@@ -19,10 +20,10 @@
 					
 
 							else  
-								.col-md-3.jumbotron.non-veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
+								.col-md-3.col-md-offset-1.col-lg-3.col-lg-offset-1.col-sm-3.col-sm-offset-1.col-xs-3.col-xs-offset-1.jumbotron.non-veg-block
+									p.dish= val.name
+									//- p.dish= val.description
+									p.dish= '₹'+val.price
 									if (user)
 										if (user.type=="admin")
 											form(action="/deleteitem/"+val method="post")
@@ -32,15 +33,15 @@
 												button.btn.btn-warning(type='submit') Add 
 											
 	#gravy.tab-pane(role='tabpanel')
-		.container
-			.row.text-center
+		.boxes.menuitem
+			.row
 					each val in menus
 						if(val.type=="Gravy")
 							if(val.category=="Veg.")
-								.col-md-3.jumbotron.veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
+								.col-md-3.col-md-offset-1.col-lg-3.col-lg-offset-1.col-sm-3.col-sm-offset-1.col-xs-3.col-xs-offset-1.jumbotron.veg-block
+									p.dish= val.name
+									//- p.dish= val.description
+									p.dish= '₹'+val.price
 									if (user)
 										if (user.type=="admin")
 											form(action="/deleteitem/"+val._id method="post")
@@ -50,10 +51,10 @@
 												button.btn.btn-warning(type='submit') Add 
 											
 							else  
-								.col-md-3.jumbotron.non-veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
+								.col-md-3.col-md-offset-1.col-lg-3.col-lg-offset-1.col-sm-3.col-sm-offset-1.col-xs-3.col-xs-offset-1.jumbotron.non-veg-block
+									p.dish= val.name
+									//- p.dish= val.description
+									p.dish= '₹'+val.price
 									if (user)
 										if (user.type=="admin")
 											form(action="/deleteitem/"+val._id method="post")
@@ -64,15 +65,15 @@
 											
 
 	#roti.tab-pane(role='tabpanel')
-		.container
-			.row.text-center
+		.boxes.menuitem
+			.row
 					each val in menus
 						if(val.type=="Rotis")
 							if(val.category=="Veg.")
-								.col-md-3.jumbotron.veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
+								.col-md-3.col-md-offset-1.col-lg-3.col-lg-offset-1.col-sm-3.col-sm-offset-1.col-xs-3.col-xs-offset-1.jumbotron.veg-block
+									p.dish= val.name
+									//- p.dish= val.description
+									p.dish= '₹'+val.price
 									if (user)
 										if (user.type=="admin")
 											form(action="/deleteitem/"+val._id method="post")
@@ -82,10 +83,10 @@
 												button.btn.btn-warning(type='submit') Add 
 											
 							else  
-								.col-md-3.jumbotron.non-veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
+								.col-md-3.col-md-offset-1.col-lg-3.col-lg-offset-1.col-sm-3.col-sm-offset-1.col-xs-3.col-xs-offset-1.jumbotron.non-veg-block
+									p.dish= val.name
+									//- p.dish= val.description
+									p.dish= '₹'+val.price
 									if (user)
 										if (user.type=="admin")
 											form(action="/deleteitem/"+val._id method="post")
@@ -98,15 +99,15 @@
 
 												button.btn.btn-warning(type='submit') Add     
 	#extra.tab-pane(role='tabpanel')
-		.container
-			.row.text-center
+		.boxes.menuitem
+			.row
 					each val in menus
 						if(val.type=="Extra")
 							if(val.category=="Veg.")
-								.col-md-3.jumbotron.veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
+								.col-md-3.col-md-offset-1.col-lg-3.col-lg-offset-1.col-sm-3.col-sm-offset-1.col-xs-3.col-xs-offset-1.jumbotron.veg-block
+									p.dish= val.name
+									//- p.dish= val.description
+									p.dish= '₹'+val.price
 									if (user)
 										if (user.type=="admin")
 											form(action="/deleteitem/"+val._id method="post")
@@ -116,10 +117,10 @@
 												button.btn.btn-warning(type='submit') Add 
 											
 							else  
-								.col-md-3.jumbotron.non-veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
+								.col-md-3.col-md-offset-1.col-lg-3.col-lg-offset-1.col-sm-3.col-sm-offset-1.col-xs-3.col-xs-offset-1.jumbotron.non-veg-block
+									p.dish= val.name
+									//- p.dish= val.description
+									p.dish= '₹'+val.price
 									if (user)
 										if (user.type=="admin")
 											form(action="/deleteitem/"+val._id method="post")
@@ -130,15 +131,15 @@
 											
 
 	#juices.tab-pane(role='tabpanel')
-		.container
-			.row.text-center
+		.boxes.menuitem
+			.row
 					each val in menus
 						if(val.type=="Juices")
 							if(val.category=="Veg.")
-								.col-md-3.jumbotron.veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
+								.col-md-3.col-md-offset-1.col-lg-3.col-lg-offset-1.col-sm-3.col-sm-offset-1.col-xs-3.col-xs-offset-1.jumbotron.veg-block
+									p.dish= val.name
+									//- p.dish= val.description
+									p.dish= '₹'+val.price
 									if (user)
 										if (user.type=="admin")
 											form(action="/deleteitem/"+val._id method="post")
@@ -148,10 +149,10 @@
 												button.btn.btn-warning(type='submit') Add 
 											
 							else  
-								.col-md-3.jumbotron.non-veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
+								.col-md-3.col-md-offset-1.col-lg-3.col-lg-offset-1.col-sm-3.col-sm-offset-1.col-xs-3.col-xs-offset-1.jumbotron.non-veg-block
+									p.dish= val.name
+									//- p.dish= val.description
+									p.dish= '₹'+val.price
 									if (user)
 										if (user.type=="admin")
 											form(action="/deleteitem/"+val._id method="post")
@@ -163,15 +164,15 @@
 
 
 	#desserts.tab-pane(role='tabpanel')
-		.container
-			.row.text-center
+		.boxes.menuitem
+			.row
 					each val in menus
 						if(val.type=="Desserts")
 							if(val.category=="Veg.")
-								.col-md-3.jumbotron.veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
+								.col-md-3.col-md-offset-1.col-lg-3.col-lg-offset-1.col-sm-3.col-sm-offset-1.col-xs-3.col-xs-offset-1.jumbotron.veg-block
+									p.dish= val.name
+									//- p.dish= val.description
+									p.dish= '₹'+val.price
 									if (user)
 										if (user.type=="admin")
 											form(action="/deleteitem/"+val._id method="post")
@@ -181,10 +182,10 @@
 												button.btn.btn-warning(type='submit') Add 
 											
 							else  
-								.col-md-3.jumbotron.non-veg-block
-									p= val.name
-									p= val.description
-									p= '₹'+val.price
+								.col-md-3.col-md-offset-1.col-lg-3.col-lg-offset-1.col-sm-3.col-sm-offset-1.col-xs-3.col-xs-offset-1.jumbotron.non-veg-block
+									p.dish= val.name
+									//- p.dish= val.description
+									p.dish= '₹'+val.price
 									if (user)
 										if (user.type=="admin")
 											form(action="/deleteitem/"+val._id method="post")
@@ -193,7 +194,7 @@
 											form(action="/additem/"+val._id method="post")
 												button.btn.btn-warning(type='submit') Add 
 											
-.container
+.boxes.menuitem
 	.row
 		if (user.type=="Customer")
 			form(action="/allorders" method='get')
