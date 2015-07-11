@@ -10,7 +10,7 @@ var userSchema = new mongoose.Schema({
   twitter: String,
   tokens: Array,
   type:{type:String,default:'Customer'},
-  tiffinstatus:{type:String,default:'Order not sent'},
+  tiffinstatus:{type:String,default:'Order has not been placed. Place an order!'},
   
   profile: {
     name: { type: String, default: '' },
