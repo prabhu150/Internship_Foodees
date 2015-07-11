@@ -1,25 +1,44 @@
 extends ./includes/layout
 block main
-	.container-fluid.editmenu-bg
-		.row
-			.col-md-4.col-md-offset-2#editmenu
-				form(action='/editmenu' method='post')
-					input.form-control(type='text' placeholder='Item Name' name="itemName")
-					input.form-control(type='textearea' rows='3' placeholder='Description' name="description")
-					.input-group
-						.input-group-addon ₹
-						input.form-control(type='number' name="price")
-					|Type
-					select.form-control(name='type')
-						option Rice
-						option Gravy
-						option Rotis
-						option Juices
+	#wrapper
+		#form
+			h1 Fantastic Form
+			fielset#signup
+				legend - Sign Up -
+				.input-box
+					label.fill_(for="name") Name
+					input(type="text", name="name")
+				.input-box
+					label.fill_(for="email") Email
+					input(type="email", name="email")
+				.input-box
+					label.fill_(for="password") Password
+					input(type="password", name="password")
+				.input-box
+					label.fill_(for="again") Again
+					input(type="password", name="again")
+				a.fill_.button(href="#") Send Form
+
+
+	//- .container-fluid.editmenu-bg
+	//- 	.row
+	//- 		.col-md-4.col-md-offset-2#editmenu
+	//- 			form(action='/editmenu' method='post')
+	//- 				input.form-control(type='text' placeholder='Item Name' name="itemName")
+	//- 				input.form-control(type='textearea' rows='3' placeholder='Description' name="description")
+	//- 				.input-group
+	//- 					.input-group-addon ₹
+	//- 					input.form-control(type='number' name="price")
+	//- 				|Type
+	//- 				select.form-control(name='type')
+	//- 					option Rice
+	//- 					option Gravy
+	//- 					option Rotis
+	//- 					option Juices
 						
-					|Category
-					select.form-control(name='category')
-						option Veg.
-						option Non-veg.
-					button.btn.btn-default(type='submit' onmouseover="valid()") Add to Menu
-	script(type="text/javascript",src="vendor/pace/pace.js")
+	//- 				|Category
+	//- 				select.form-control(name='category')
+	//- 					option Veg.
+	//- 					option Non-veg.
+	//- 				button.btn.btn-default(type='submit' onmouseover="valid()") Add to Menu
 	script(type="text/javascript",src="js/formvalidate.js")

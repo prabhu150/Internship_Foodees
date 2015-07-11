@@ -1,7 +1,7 @@
 extends ./includes/layout
 block main
 	#login.animated.bounce
-		h2 login
+		h2 Dabba Location
 		form(action='/updatelocation' method='post')
 			.input
 				input.entypo-user(type='text', name='email', placeholder='Customer\'s email')
@@ -14,30 +14,3 @@ block main
 				option Dabba is delivered
 				option Dabba is returned
 			input(type='submit', value='Update')
-
-
-
-
-
-
-	//- .container
-	//- 	.row.text-center
-	//- 			.col-md-6
-	//- 				.list-group
-	//- 					each val in users
-	//- 						br
-	//- 						button.list-group-item(type='button' class='c-email' ) 
-	//- 							p= val.email
-	//- 			.col-md-6
-	//- 				form(action='/updatelocation' method='post')
-	//- 					input.form-control(type='text' placeholder='Customer\'s email' name="email")
-	//- 					select.form-control(name='location')
-	//- 						option 
-	//- 						option Order not sent
-	//- 						option Order is received
-	//- 						option Food is being cooked
-	//- 						option Dabba is being packed
-	//- 						option Dabba on its way
-	//- 						option Dabba is delivered
-	//- 						option Dabba is returned
-	//- 					button.btn.btn-default(type='submit') Update
