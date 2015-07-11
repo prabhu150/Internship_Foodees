@@ -2,14 +2,13 @@ extends ./includes/layout
 block main
   .wrapper#index
       .container
-          h1 Welcome
+          h1.text-center Welcome
           form.form.text-center(action="/signin" method="post")
             input(type='email', placeholder='Email', name='email')
             input(type='password', placeholder='Password', name='password')
             button#login-button(type='submit') Let me in
             br
             a.btn(href='/signup')#signup Signup
-            h4 OR
             a.col-md-4.col-md-offset-4.btn.btn(href='/auth/facebook')#fb 
               .login-icon
                 i.fa.fa-facebook 
