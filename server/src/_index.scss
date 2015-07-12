@@ -67,12 +67,12 @@ margin-top: 0px !important;
   color: #53e3a6;
 }
 .form button {
-margin:0px 0px 10px 25px;
+margin:0px 0px 10px 0px;
   appearance: none;
   outline: 0;
   background-color: $pane-color;
   border: 0;
-  padding: 10px 15px;
+  padding: 10px;
   color: $component-color;
   border-radius: 3px;
   width: 250px;
@@ -86,7 +86,7 @@ margin:0px 0px 10px 25px;
 }
 
 #signup{
-  margin:0px 0px 10px 25px;
+  margin:0px 0px 10px 0px;
   appearance: none;
   outline: 0;
   background-color: $pane-color;
@@ -97,6 +97,7 @@ margin:0px 0px 10px 25px;
   cursor: pointer;
   font-size: 18px;
   margin-top: 5px;
+  padding:10px;
 }
 
 #fb{
