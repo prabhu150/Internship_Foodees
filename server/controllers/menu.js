@@ -349,7 +349,7 @@ exports.setupDefaultMenu =function(req,res)
 
 	function onInsert(err, docs) {
 	    if (err) {
-	        // TODO: handle error
+	    	console.log(err);
 	    } else {
 	        console.info('%d data were successfully stored.', docs.length);
 	    }

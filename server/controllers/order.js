@@ -11,18 +11,19 @@ exports.postAddItem =  function(req,res){
 	    });
  }
 exports.postRemoveItem =  function(req,res){
-Order.remove({m_id:req.params.id,u_id:req.user.id},function(err,order) // finds order by the menu item and user id 
+
+Order.remove({m_id:req.params.id,u_id:req.user.id},function(err,order) 
 {
 	    	Menu.find(function(err,menus){
                     res.render('menu',{menus:menus, title: 'Menu'});
                 });
-
 });
+
 }
 
 
 exports.postCartRemoveItem =  function(req,res){
-Order.remove({_id:req.params.id,u_id:req.user.id},function(err,order) // finds order by the menu item and user id 
+Order.remove({_id:req.params.id,u_id:req.user.id},function(err,order)
 {
 	    	Order.find().populate('m_id').exec(function(err, orders) {
 		res.render('my-order',{orders:orders, title:'My Orders'});
@@ -30,37 +31,28 @@ Order.remove({_id:req.params.id,u_id:req.user.id},function(err,order) // finds o
 
 });
 }
-
-
-
-
 exports.postViewOrder = function(req,res){
 	User.find(function(err, users){
 	  res.render('my-order',{orders:users, title:'My Orders'});
 	});
 }
-
 exports.getAllOrders = function (req,res){
-	
 if(req.user)
+
 	Order.find().populate('m_id').exec(function(err, orders) {
 		res.render('my-order',{orders:orders, title:'My Orders'});
 	});
+
 else
 	res.redirect('/');
+
 }
 exports.getDelivery = function(req,res){
-	
-
 	var username = req.user.profile.name;
 if(req.user)
 	{
-		// some IF condition comes here...otherwise all logged in users get entry without ordering stuff
-		res.render('delivery',{title:'Delivery Details'});
-//else redirect to dashboard
+	res.render('delivery',{title:'Delivery Details'});
 	}
-
-
 else
 	res.redirect('/');
 
@@ -73,18 +65,14 @@ exports.postDelivery = function(req,res){
 
 res.render("dashboard",{users:users,title:'Order Placed!'});
 
-
- 
-
-
-    });
+});
     console.log('Ready');
 }
 
 exports.getUpdateLocation = function(req,res){
 
+User.find(function(err, users){
 
-	User.find(function(err, users){
 if(req.user)
 	  
 {
@@ -109,19 +97,5 @@ exports.postUpdateLocation = function(req,res){
 User.find(function(err,users){
  	res.render('update-location',{users:users, title:'Update location'});
 });
-   
-    
-
-    });
+   });
 }
-
-
-
-// User.findByIdAndUpdate({email:req.body.gemail},
-//     	{$set:{profile:{location:req.body.location}}},
-//     	{safe: true, upsert:true},function(err,users){
-//     	console.log('updated');
-// User.find(function(err,users){
-//  	res.render('update-location',{users:users, title:'Update location'});
-// });
-
