@@ -9,7 +9,8 @@ $main-color: rgba(83, 170, 179, 1);
 $pink-accent-color: rgba(234, 53, 86, 1);
 $blue-accent-color: rgba(97, 210, 214, 1);
 $gradient-color: #C240D7; //purple-ish
-$background-color: #46cbda; //blue
+$previous-color: #46cbda; //bright-blue
+$background-color: #34495e; //deep-blue
 $component-color: #e31b23; //red
 $hover-color: #c11f2b; //dark-red
 $pane-color: rgba(255, 255, 255, 1); //white
@@ -33,7 +34,7 @@ $sans-font: "Open Sans", sans-serif;
 @import '_contact';
 @import '_updatelocation';
 @import 'myorder';
-@import 'dashboard';
+@import '_dashboard';
 
 @font-face { font-family: oran ; src: url('/fonts/orange juice 2.0.ttf'); } 
 @font-face { font-family: germanica1 ; src: url('/fonts/Germanica1.ttf'); } 

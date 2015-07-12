@@ -1,38 +1,63 @@
 extends ./includes/layout
 block main
-	body
-		.container
-			.row.jumbotron.text-center#heading
-				h2 Profile Details
-				p [Top Secret] 
-			.row
-				.col-md-4.text-center#profilepic
-					img(src= user.profile.picture alt='')
-					hr
-					
-					span.glyphicon.glyphicon-time.profile-icon(aria-hidden='true')
-					font Joined on !{user.profile.time}
-					hr
+	#wrapper
+		#profile
+			.img
+			|       
+			a.btn.btn_left(href='https://twitter.com/RumLover') @rumlover
+			|       
+			a.btn.btn_right(href='https://www.facebook.com/CaptainJackSparrow') Facebook
+			|       
+			.info
+			| Hello, my name is 
+			strong Jack Sparrow
+			| . I&apos;m a 
+			strong 50 year old
+			|  self-employed 
+			strong Pirate
+			|  from the 
+			strong Caribbean
+		| .
+		|   
+		|   
+		.pen_data
+		| A pen by 
+		a(href='http://www.lukepeters.me', target='_blank') Luke Peters
 
-				.col-md-8#details
-					h4 Personal Details
-					ul
-						li Name: 
-							font #{user.profile.name}
-						li Gender: 
-							font #{user.profile.gender}
-						li Email:
-							font  #{user.email}
-						li Type : 
-							font #{user.type}
-						li
+
+
+
+
+		//- .container
+		//- 	.row.jumbotron.text-center#heading
+		//- 		h2 Profile Details
+		//- 		p [Top Secret] 
+		//- 	.row
+		//- 		.col-md-4.text-center#profilepic
+		//- 			img(src= user.profile.picture alt='')
+		//- 			hr
+					
+		//- 			span.glyphicon.glyphicon-time.profile-icon(aria-hidden='true')
+		//- 			font Joined on !{user.profile.time}
+		//- 			hr
+
+		//- 		.col-md-8#details
+		//- 			h4 Personal Details
+		//- 			ul
+		//- 				li Name: 
+		//- 					font #{user.profile.name}
+		//- 				li Gender: 
+		//- 					font #{user.profile.gender}
+		//- 				li Email:
+		//- 					font  #{user.email}
+		//- 				li Type : 
+		//- 					font #{user.type}
+		//- 				li
 							
-		.container
-			.row.text-center
-				if (user.type=='Customer')
-					.row.text-center
-						.col-md-10.col-md-offset-1
-							font Your #{user.tiffinstatus}
+		//- .container
+		//- 	.row.text-center
+		//- 		if (user.type=='Customer')
+		//- 			.row.text-center
+		//- 				.col-md-10.col-md-offset-1
+		//- 					font Your #{user.tiffinstatus}
 
-	script(type="text/javascript",src="vendor/pace/pace.js")
-					
