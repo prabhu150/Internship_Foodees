@@ -1,8 +1,10 @@
 var User = require('../models/User');
 var passport = require('passport');
+
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var GoogleStrategy=require('passport-google-oauth').OAuth2Strategy;
+
 
 var facebook={
 clientID:'376644559201250',
@@ -105,7 +107,7 @@ passport.use(new FacebookStrategy(facebook, function(req, accessToken, refreshTo
  */
 passport.use(new GoogleStrategy(google, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-    console.log("First Block");
+    
     User.findOne({ google: profile.id }, function(err, existingUser) {
       if (existingUser) {
         console.log('There is already a Google+ account that belongs to you. Sign in with that account or delete it, then link it with your current account.' );
@@ -118,7 +120,7 @@ passport.use(new GoogleStrategy(google, function(req, accessToken, refreshToken,
           user.profile.gender = user.profile.gender || profile._json.gender;
           user.profile.name = user.profile.displayName || profile.displayName;
           user.email = profile.emails[0].value;
-user.profile.picture = profile.photos[0].value + "0";    
+          user.profile.picture = profile.photos[0].value + "0";    
           user.save(function(err) {
             console.log('Google account has been linked.');
             done(err, user);
@@ -136,9 +138,7 @@ user.profile.picture = profile.photos[0].value + "0";
            console.log('There is already an account using this email address. Sign in to that account and link it with Google manually from Account Settings.' );
           done(err);
         } else {
-          console.log('Third block');
-
-          console.log(profile);
+         
           var user = new User();
           user.email = profile.emails[0].value;
           user.profile.name = user.profile.displayName || profile.displayName;
