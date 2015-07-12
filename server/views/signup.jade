@@ -47,7 +47,6 @@ block main
 				i.fa.fa-exclamation-triangle.fa-2x.wrongicon.sr-only#sexwrong
 
 		#sexmsg.message
-		input(type='file', name='userPhoto')
 		input#checkbox(type='checkbox', name='agree')
 		| I agree to the  
 		br
@@ -68,7 +67,7 @@ block main
 					.modal-footer
 						h4 -foodees
 
-		input.sign-up-button(type='submit', value='Sign me up!' id='onsubmit' onmouseover="validate()")
+		input.sign-up-button.disabled(type='submit', value='Sign me up!' id='onsubmit' onmouseover="validate()")
 
 	script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
 	script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js')
