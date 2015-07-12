@@ -8,39 +8,21 @@ block main
 				p #{user.profile.name}
 				p (#{user.type}) 
 				p #{user.email}
-
-
-		//- .container
-		//- 	.row.jumbotron.text-center#heading
-		//- 		h2 Profile Details
-		//- 		p [Top Secret] 
-		//- 	.row
-		//- 		.col-md-4.text-center#profilepic
-		//- 			img(src= user.profile.picture alt='')
-		//- 			hr
-					
-		//- 			span.glyphicon.glyphicon-time.profile-icon(aria-hidden='true')
-		//- 			font Joined on !{user.profile.time}
-		//- 			hr
-
-		//- 		.col-md-8#details
-		//- 			h4 Personal Details
-		//- 			ul
-		//- 				li Name: 
-		//- 					font #{user.profile.name}
-		//- 				li Gender: 
-		//- 					font #{user.profile.gender}
-		//- 				li Email:
-		//- 					font  #{user.email}
-		//- 				li Type : 
-		//- 					font #{user.type}
-		//- 				li
+	.container#address
+		.row.jumbotron
+			h3 Billing Address
+			p #{user.address.line1}, #{user.address.line2},
+			p #{user.address.line3},
+			p #{user.address.line4},
+			p #{user.address.line5},
+			p #{user.address.line6}-#{user.address.line7}.
+			
 							
-		//- .container
-		//- 	.row.text-center
-		//- 		if (user.type=='Customer')
-		//- 			.row.text-center
-		//- 				.col-md-10.col-md-offset-1
-		//- 					font Your #{user.tiffinstatus}
+	.container
+		.row.text-center
+			if (user.type=='Customer')
+				.row.text-center
+					.col-md-10.col-md-offset-1
+						font Your #{user.tiffinstatus}
 
 	include ../views/partials/footer

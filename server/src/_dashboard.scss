@@ -42,3 +42,19 @@
     }
   }
 }
+
+#address{
+  .jumbotron{
+      width: 390px;
+      background-color: antiquewhite;
+      margin-left: 25%;
+      margin-top: 15px;
+    p{
+      font-size: 15px;
+      font-family: monospace;
+    }
+    h3{
+      color: $background-color;
+    }
+  }
+}
