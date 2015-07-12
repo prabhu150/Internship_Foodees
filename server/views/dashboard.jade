@@ -17,12 +17,15 @@ block main
 			p #{user.address.line5},
 			p #{user.address.line6}-#{user.address.line7}.
 			
-							
-	.container
-		.row.text-center
-			if (user.type=='Customer')
-				.row.text-center
-					.col-md-10.col-md-offset-1
-						font Your #{user.tiffinstatus}
+	#status
+		.quote
+			p.line-through
+				span
+			.stripe-border
+				blockquote
+					if (user.type=='Customer')
+						p &ldquo; Your #{user.tiffinstatus} &rdquo;
+			cite.line-through
+				span 
 
 	include ../views/partials/footer
