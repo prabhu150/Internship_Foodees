@@ -33,6 +33,11 @@
               i#icon.fa.fa-map-marker
               span.text
                 a(href='/updatelocation') Update location
+        if (user.type=="Customer")
+          li
+              i#icon.fa.fa-map-marker
+              form(action="/allorders" method='get')
+               a(href='/allorders') View Order
         li
           i#icon.fa.fa-phone
           span.text
