@@ -5,7 +5,7 @@
       disable: [3, 5, 7],  //disable times 
       closeOnSelect: true, //close after selection
       closeOnClear: true,  // close on clearing selection
-      min: new Date(2015,1,20,9), //minimum time selected
+      min: new Date(2015,1,20,9), //minimum time selected TODO NEVER HARDCODE ANYTHINH
       max: new Date(2015,12,14,21), //maximum time selected
       hiddenName:false,
             

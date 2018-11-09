@@ -7,7 +7,7 @@ body{
   margin: 0;
   color: #FFF;
   font-family: helvetica, arial;
-  font-weight: light;
+  font-weight: lighter;
   width: 58px;
   position: fixed;
   z-index: 10;
@@ -34,6 +34,7 @@ body{
   right: 40px;
   border-bottom: 1px solid $hover-color;
   font-size: 25px;
+  white-space: nowrap
 }
 
 #nav li:hover{
@@ -47,6 +48,10 @@ body{
 
 .text{
   margin-left: 20px;
+  display: inline-block;
+  width: available;
+  height: available;
+
   a{
 	color: white;
 	text-decoration: none;

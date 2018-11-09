@@ -3,45 +3,46 @@
     #nav-content
       ul
         li
-          i#icon.fa.fa-home
+          i.icon.fa.fa-home
           span.text
-            a(href='/') Foodees
+            a.link(href='/') Foodees
         if (!user)
-          li
-            i#icon.fa.fa-sign-in
-            span.text
-              a(href='/index') Signin
         li
-          i#icon.fa.fa-users
-          span.text
-            a(href='/about') About
+         i.icon.fa.fa-sign-in-alt
+         span.text
+            a.link(href='/index') Signin
         li
-          i#icon.fa.fa-cogs
+          i.icon.fa.fa-users
           span.text
-            a(href='/working') How it works
+            a.link(href='/about') About
         li
-          i#icon.fa.fa-cutlery
+          i.icon.fa.fa-cogs
           span.text
-            a(href='/menu') Menu
+            a.link(href='/working') How it works
+        li
+          i.icon.fa.fa-utensils
+          span.text
+            a.link(href='/menu') Menu
         if (user)
           if ( user.type =="admin")
             li
-              i#icon.fa.fa-pencil
+              i.icon.fa.fa-pencil
               span.text
-                a(href='/editmenu') Edit menu
+                a.link(href='/editmenu') Edit menu
             li
-              i#icon.fa.fa-map-marker
+              i.icon.fa.fa-map-marker
               span.text
-                a(href='/updatelocation') Update location
-        if (user.type=="Customer")
+                a.link(href='/updatelocation') Update location
+          if (user.type=="Customer")
+            li
+                i.icon.fa.fa-map-marker
+                span.text
+                  a.link(href='/allorders' onclick="document.getElementById('form1').submit();") View Order
+                  form#getorders(action="/allorders" method='get')
           li
-              i#icon.fa.fa-map-marker
-              form(action="/allorders" method='get')
-               a(href='/allorders') View Order
-        li
-          i#icon.fa.fa-phone
-          span.text
-            a(href='/contactus') Contact us
+            i.icon.fa.fa-phone
+            span.text
+              a.link(href='/contactus') Contact us
         
 if user
   .btn-group.btn-position
@@ -56,10 +57,10 @@ if user
           img.img-circle.dropdown-profile-pic(src='#{user.profile.picture}')
         li.divider(role='separator')
         li.text-center
-          a(href='/dashboard') My Profile 
+          a.link(href='/dashboard') My Profile
         if (user.type=="admin")
           li.text-center
-            a(href='/setdefaultmenu') Set-Up Default Menu 
+            a.link(href='/setdefaultmenu') Set-Up Default Menu
         
         li.text-center
-          a(href='/signout') Logout
+          a.link(href='/signout') Logout

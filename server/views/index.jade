@@ -6,19 +6,19 @@ block main
           form.form.text-center(action="/signin" method="post")
             input(type='email', placeholder='Email', name='email')
             input(type='password', placeholder='Password', name='password')
-            button#login-button(type='submit') Let me in
+            button.btn#login-button(type='submit') Login
             br
-            a.btn(href='/signup')#signup Signup
+            a.btn(href='/signup')#signup Sign-Up
             a.col-md-4.col-md-offset-4.btn.btn(href='/auth/facebook')#fb 
               .login-icon
-                i.fa.fa-facebook 
-                |&nbspLogin with Facebook
+                |&nbspLogin with Facebook &nbsp
+                i.fab.fa-facebook
             br
             br
             a.col-md-4.col-md-offset-4.btn(href='/auth/google')#gp 
               .login-icon
-                i.fa.fa-google-plus 
-                |&nbspLogin with Google+
+                |&nbspLogin with Google+ &nbsp
+                i.fab.fa-google-plus
         ul.bg-bubbles
           li
           li
